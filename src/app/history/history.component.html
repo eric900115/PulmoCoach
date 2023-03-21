@@ -17,7 +17,18 @@
         <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">History</p>
         <div class="link-top"></div>
 
-        <p>HI!!!</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
+            <p class="normal_text" style="font-size: 2em;">Date</p>
+            <p class="normal_text" style="font-size: 2em;">Quiz Type</p>
+            <p class="normal_text" style="font-size: 2em;">Result</p>
+        </div>
+
+        <div *ngFor="let info of records" style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
+            <p class="normal_text" style="font-size: 1.75em;">{{ info.date }}</p>
+            <p class="normal_text" style="font-size: 1.75em;">{{ info.quiz_type }}</p>
+            <p class="normal_text" style="font-size: 1.75em;">{{ info.pass }} / {{ info.result }}</p>
+        </div>
+        <button routerLink="/menu" class="normal_text" style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
     </div>
 
 </div>
