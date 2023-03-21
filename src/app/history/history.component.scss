@@ -24,3 +24,14 @@
     border-top: solid #FFFFFF 1px;
     margin-inline: auto;
 }
+
+.arrow {
+    background-color:transparent; 
+    border-color: white; 
+    border-width: 0.01em; 
+    align-self: center;
+}
+
+.arrow:hover {
+    box-shadow: 0px 0px 15px rgb(255, 255, 255);
+    }
