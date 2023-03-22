@@ -1,11 +1,51 @@
-<div>
-    
-    <button routerLink="/menu" (click)="changeMode('Tutorial')">Tutorial</button>
+<div class = "grid-container">
+	<div class = "grid-left">
+		<div><img id = "user_img" src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png" alt="user_img"></div>
+		<div><p id = "user_name">User Name</p></div>
+		
+        <div>
+            <button id="Home_btn" class="home_btn">
+                Home
+            </button>
+        </div>
+		<div>
+            <button id="Tutorial_btn" class="home_btn" routerLink="/menu" (click)="changeMode('Tutorial')">
+                CXR Tutorial
+            </button>
+        </div>
+		<div>
+            <button id="Random_btn" class="home_btn" routerLink="/question" (click)="changeMode('Random Quiz')">
+                Random Quiz
+            </button>
+        </div>
+		<div>
+            <button id="Custom_btn" class="home_btn" routerLink="/question" (click)="changeMode('Custom Quiz')">
+                Custom Quiz
+            </button>
+        </div>
+		<div>
+            <button id="Search_btn" class="home_btn">
+                CXR Search
+            </button>
+        </div>
+		<div>
+            <button id="Analytics_btn" class="home_btn">
+                Analytics
+            </button>
+        </div>
+		<div>
+            <button id="History_btn" class="home_btn">
+                History
+            </button>
+        </div>
+	</div>
 
-    <button routerLink="/question" (click)="changeMode('Random Quiz')">Random Quiz</button>
-
-    <button routerLink="/question" (click)="changeMode('Custom Quiz')">Custom Quiz</button>
-
-    <button routerLink="/menu" (click)="changeMode('About us')">About us</button>
-
+	<div class = "grid_midline"></div>
+	
+    <div class = "grid-right">
+		<div id = "about_us">
+			<h2 id = "about_us_h2">About Us</h2>
+			<hr id = "about_us_hr">
+		</div>
+	</div>
 </div>
