@@ -12,6 +12,7 @@ export class QuestionComponent implements OnInit {
   public name: string = '';
   public questionList: any = [];
   public AnswerList: any = [];
+  public ImgURL: any = [];
   public currentQuestion: number = 0;
   public currentSubQuestion: number = 0;
   public points: number = 0;
@@ -95,13 +96,14 @@ export class QuestionComponent implements OnInit {
 
       this.questionList.push(question);
       this.AnswerList.push(answer);
+      this.ImgURL.push(data['img'])
     }
+    console.log(this.ImgURL)
   }
 
   startQuiz(){
     this.isStart = true;
   }
-
 
   isQuizFinished(){
     return (this.currentQuestion == this.questionList.length - 1) && 
@@ -157,7 +159,6 @@ export class QuestionComponent implements OnInit {
 
   }
 
-
   getProgressPercent() {
     this.progress = ((((this.currentQuestion) * this.questionList[0].length + this.currentSubQuestion) / 
       (this.questionList.length * this.questionList[0].length))* 100)
@@ -166,8 +167,5 @@ export class QuestionComponent implements OnInit {
 
     return this.progress;
   }
-  
-  async getImages(){
 
-  }
 }

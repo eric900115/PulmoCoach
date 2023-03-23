@@ -1,61 +1,50 @@
 <div>
   <div>
     <div>
-      <div class="image">
-        <img src="https://img.icons8.com/color/96/000000/angularjs.png" width="100" alt="">
-      </div>
-      <div>
-          <h4>Angular & TypeScript Quiz</h4>
-          <span>Welcome {{name}}</span>
-        </div>
-      </div>
-
       <ng-container *ngIf="isCustom && !isCustomMenuFinished">
         <div>custom menu</div>
         <button (click)="customMenuDone()">start</button>
       </ng-container>
-
 
       <ng-container *ngIf="(!isCustom && !isStart) || (isCustom && isCustomMenuFinished && !isStart)">
         <button (click)="startQuiz()">ready</button>
       </ng-container>
 
       <ng-container *ngIf="!isQuizCompleted && isStart">
-        <div>
-          <div>
-            <span>Question {{currentQuestion + 1}} of {{questionList.length}}</span>
+        <div class="grid-container">
+          <div class="grid-left">
+						<img id="photo" src={{this.ImgURL[currentQuestion]}} alt="user_img">
+					</div>
+					
+          <div class="grid_midline"></div>
+					
+          <div class="top_btn">
+						<button id="back" (click)="prevQuestion()" [disabled]="(currentQuestion === 0) 
+            && (currentSubQuestion === 0)">Back</button>
+						<button id="next" (click)="nextQuestion()" [disabled]="(currentQuestion === questionList.length -1) 
+            && (currentSubQuestion === questionList[questionList.length - 1].length - 1)">Next</button>
+						<button id="end_quiz" (click)="endQuiz()">End Quiz</button>
+					</div>
+					
+          <div class="Q">{{questionList[currentQuestion][currentSubQuestion][0]}}
+            QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion
           </div>
-        </div>
-        <div class="w-full bg-gray-200 rounded-full dark:bg-gray-150">
-          <div class="bg-blue-600 h-6 text-lg font-medium text-blue-100 text-center  p-0.5 leading-none rounded-full"
-            [ngStyle]="{'width': progress + '%' }"> {{progress}}%</div>
-        </div>
-        <div class="question mt-6">
-          <div class="bg-white px-3 py-4 border rounded-xl  border-slate-300 w-full ">
-            <h3 class="text-xl font-bold">{{questionList[currentQuestion][currentSubQuestion][0]}}</h3>
-          </div>
-        </div>
-        <div class="options mt-2">
-          <div>
-            <button (click)="answer('YES')">yes</button>
-            <button (click)="answer('NO')">no</button>
-          </div>
-        </div>
-        <div class="flex justify-between mt-10">
-          <button (click)="prevQuestion()" [disabled]="(currentQuestion === 0) 
-            && (currentSubQuestion === 0)">
-            prev
-          </button>
-          
-          <button (click)="nextQuestion()" [disabled]="(currentQuestion === questionList.length -1) 
-            && (currentSubQuestion === questionList[questionList.length - 1].length - 1)">
-            next
-          </button>
-
-          <button (click)="endQuiz()">
-            end Quiz
-          </button>
-        </div>
+					<div class="hint"> 
+						<p id="hint">HintHintHintHintHintHintHintHintHintHintHintHintHintHintHint</p>
+						<button id="hint_btn">Hint</button>
+					</div>
+					<div class="answer">
+						<button id="present" (click)="answer('YES')">Present</button>
+						<button id="absent" (click)="answer('NO')">Absent</button>
+					</div>
+					<div class="process">
+						<p id="ratio">
+              <var id="finished">{{currentQuestion + 1}}</var> 
+              / 
+              <var id="total">{{questionList.length}}</var>
+            </p> 
+					</div>	
+				</div>
       </ng-container>
     
   
