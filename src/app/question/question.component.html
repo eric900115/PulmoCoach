@@ -7,7 +7,25 @@
       </ng-container>
 
       <ng-container *ngIf="(!isCustom && !isStart) || (isCustom && isCustomMenuFinished && !isStart)">
-        <button (click)="startQuiz()">ready</button>
+        <div class="ready-grid-container">
+          <div class="ready-grid-left">
+            <div><img id="user_img" src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png" alt="user_img"></div>
+            <div><p id="user_name">User Name</p></div>
+          </div>
+          <div class="ready-grid_midline"></div>
+          <div class="quiz">
+            <h2 id="quiz_h2"><var id="quiz_type">{{this.mode}}</var></h2> <!-- Note: QUIZTYPE 要換成 Random 或 Custom -->
+            <hr id="quiz_hr">
+          </div>
+      
+          <div class="quiz_warning">
+            <p class="warning_msg">Since there are not enough CXRs that meet the requirement of the custom selection, the remaining questions will be replaced with normal CXRs.</p> <!-- Note: warning 在特殊條件下才顯示（題數不夠） -->
+          </div>
+          <div class="quiz_btn">
+            <button id="abort" routerLink="/menu">Abort Quiz</button>
+            <button id="go_to_quiz" (click)="startQuiz()">Go To Quiz</button>
+          </div>	
+        </div>
       </ng-container>
 
       <ng-container *ngIf="!isQuizCompleted && isStart">

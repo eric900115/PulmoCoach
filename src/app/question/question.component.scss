@@ -1,3 +1,129 @@
+// ready
+.ready-grid-container {
+  display: grid;
+  grid-template-columns: 25% 0.2% 37.4% 37.4%;
+  grid-template-rows: 10% 5% 35% 25% 15% 10%;
+  justify-content: space-evenly;
+  border-style: solid;
+  border-width: 0.15rem;
+  border-color: white;
+  margin: 0.2rem;
+  min-height: 100vh;
+}
+
+.ready-grid-left {
+  grid-row: 1/7;
+  grid-column: 1/2;
+  text-align: center;
+}
+
+.ready-grid_midline {
+  grid-row: 2/6;
+  grid-column: 2/3;
+  margin-top: 10%;
+  margin-bottom: 10%;
+  background-color: white;
+}
+
+.quiz {
+  grid-row: 1/2;
+  grid-column: 3/5;
+  margin-bottom: 10%;
+  margin-top: 0%;
+  margin-left: 5%;
+  margin-right: 5%;
+  text-align: center;
+  font-size: 3rem;
+}
+
+.quiz_warning {
+  grid-row: 4/5;
+  grid-column: 3/5;
+  margin-top: 0%;
+  margin-right: 5%;
+  margin-left: 5%;
+  font-size: 1.7rem;
+  text-align: left;
+  color: red
+}
+
+.quiz_btn {
+  grid-row: 5/7;
+  grid-column: 3/5;
+  margin-top: 0%;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+}
+
+#abort {
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: red;
+  border: white 0.125rem solid;
+  color: white;
+  font-size: 2rem;
+  border-radius: 2em;
+}
+
+#go_to_quiz {
+  margin-top: 3%;
+  margin-left: 5%;
+  margin-right: 5%;
+  padding-left: 5.5%;
+  padding-right: 5.5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  background-color: black;
+  border: white 0.125rem solid;
+  color: white;
+  font-size: 2rem;
+  border-radius: 2em;
+}
+
+#abort:hover {
+  background-color: rgb(243, 127, 127);
+}
+
+#go_to_quiz:hover {
+  background-color: rgb(127, 127, 127);
+}
+
+h1 {
+  font-size: 6em;
+  font-family: 'Edu NSW ACT Foundation', cursive;
+  text-align: center;
+}
+
+#user_img {
+  border-radius: 50rem;
+  margin-top: 25%;
+  max-height: 70%;
+  max-width: 70%
+}
+
+#user_name {
+  font-size: 200%;
+  text-align: center;
+  margin-bottom: 3%;
+  margin-top: 3%;
+}
+
+#quiz_h2 {
+  margin-top: 5%;
+  margin-bottom: 0;
+}
+
+#quiz_hr {
+  margin: 0;
+}
+
+// quiz
 .grid-container {
   display: grid;
   grid-template-columns: 70% 0.2% 29.8%;
