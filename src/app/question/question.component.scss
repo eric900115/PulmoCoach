@@ -321,3 +321,30 @@ h1 {
 #absent:hover {
   background-color: rgb(127, 127, 127);
 }
+
+// result
+.normal_text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  // font-size: 48px;
+  line-height: 90%;
+  /* or 43px */
+  display: flex;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 100px;
+  justify-items: center;
+}
+
+.link-top {
+  width: 90%;
+  height: 0.1rem;
+  border-top: solid #FFFFFF 1px;
+  margin-inline: auto;
+}

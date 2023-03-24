@@ -67,27 +67,31 @@
     
   
       <ng-container *ngIf="isQuizCompleted">
-        <div class="row flex justify-center">
-          <button routerLink="/welcome">
-            go to menu
-          </button>
-          <div class="text-center col-md-6 col-sm-12">
-            <h3 class="text-xl font-bold">Congratulations!!
-              <br>You have completed the quiz<br> Below is your result:
-            </h3>
-            <p>Total Questions Attempted : {{questionList.length}} </p>
-            <p>Total Correct Answered : {{correctAnswer}} </p>
-            <p>Total Wrong Answered : {{incorrectAnswer}} </p>
-            <p class="text-xl font-bold">Your Score : {{points}} Points </p>
-          </div>
-          <div class="options mt-2">
-            <ol class="list-decimal ml-5" *ngFor="let answer of AnswerList">
-              <li class="mt-2">
-              </li>
-              <div *ngFor="let item of answer | keyvalue">           
-                {{item.key}} {{item.value}}
+        <div class="container-fluid" style="background-color:black; padding:3%; border-color:white;border-width:0.1em;">
+          <div style="border-color:white;border-width:0.1rem; border-style:solid; display:flex; flex-direction:column; padding:2%; justify-content:space-between;">
+            <div style="display: flex; justify-content:space-between;">
+              <div style="display:flex; flex-direction: column; align-items: center;">
+                <img src="../../assets/history/circle.svg" style="width: 90%; padding: 5%;"/>
+                  <p class="normal_text" style="font-size: 2.5em; padding-top: 8%;">User Name</p>
               </div>
-            </ol>
+            </div>
+            <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">History</p>
+            <div class="link-top"></div>
+            <p>HI!!!</p>
+            <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
+              <p class="normal_text" style="font-size: 2em;">Question</p>
+              <p class="normal_text" style="font-size: 2em;">Answer</p>
+              <p class="normal_text" style="font-size: 2em;">Your Answer</p>
+            </div>
+  
+            <div *ngFor="let answer of AnswerList">
+              <div *ngFor="let item of answer | keyvalue" style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
+                <p class="normal_text" style="font-size: 1.75em;">{{item.key}}</p>
+                <p class="normal_text" style="font-size: 1.75em;">{{item.value[0]}}</p>
+                <p class="normal_text" style="font-size: 1.75em;">{{item.value[1]}}</p>
+              </div>
+            </div>
+            <button routerLink="/menu" class="normal_text" style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
           </div>
         </div>
       </ng-container>

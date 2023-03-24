@@ -11,7 +11,7 @@ export class QuestionComponent implements OnInit {
 
   public name: string = '';
   public questionList: any = [];
-  public AnswerList: any = [];
+  public AnswerList: Record<string, any>[] = [];
   public ImgURL: any = [];
   public currentQuestion: number = 0;
   public currentSubQuestion: number = 0;
@@ -80,7 +80,8 @@ export class QuestionComponent implements OnInit {
     for (const [id, data] of Object.entries(Data)) {
 
       const question: string[][] = [];
-      const answer: any = {};
+      //const answer: any = {};
+      let answer: Record<string, any> = {};
       
       for(const [symptom, v] of Object.entries(data['symptom'])){
         
@@ -98,7 +99,6 @@ export class QuestionComponent implements OnInit {
       this.AnswerList.push(answer);
       this.ImgURL.push(data['img'])
     }
-    console.log(this.ImgURL)
   }
 
   startQuiz(){
@@ -139,8 +139,21 @@ export class QuestionComponent implements OnInit {
     this.AnswerList[this.currentQuestion][symptom][1] = option;
   }
 
+  calculateResult(){
+    for(let answer of this.AnswerList){
+      for(let key in answer){
+        // your answer == correct answer
+        if(answer[key][0] === answer[key][1]){
+          this.correctAnswer++;
+        }
+      }
+    }
+  }
+
   endQuiz(){
     this.isQuizCompleted = true;
+    this.calculateResult();
+    console.log(this.correctAnswer);
   }
 
   answer(option: string) {
