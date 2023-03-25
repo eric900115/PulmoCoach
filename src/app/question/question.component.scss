@@ -1,3 +1,39 @@
+// custom menu
+option{
+  color: black;
+}
+
+.custom_menu {
+  border-style: solid;
+  border-width: 0.15rem;
+  border-color: white;
+  margin: 0.15rem;
+}
+
+#custom_menu {
+  font-size: 55px;
+}
+
+.select_text {
+  font-size: 35px;
+}
+
+.custom_normal_text {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 60%;
+  align-items: center;
+  color: #FFFFFF;  
+}
+
+.arrow {
+  background-color: transparent; 
+  border-color: white; 
+  border-width: 0.01em; 
+  align-self: center;
+}
+
 // ready
 .ready-grid-container {
   display: grid;
