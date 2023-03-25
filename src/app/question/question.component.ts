@@ -34,6 +34,45 @@ export class QuestionComponent implements OnInit {
 
   uid: string = 'eric20607';
 
+  customSymptom: string;
+  customAbnomarlityRate: number;
+  customQuestionNum: number;
+  customGender: string;
+
+  Gender = [
+    'Male',
+    'Female',
+    'Both'
+  ];
+
+  Symptom = [
+    'Aortic enlargement',
+    'Atelectasis',
+    'Calcification',
+    'Cardiomegaly',
+    'Clavicle fracture',
+    'Consolidation',
+    'Edema',
+    'Emphysema',
+    'Enlarged PA',
+    'ILD',
+    'Infiltration', 
+    'Lung Opacity',
+    'Lung cavity',
+    'Lung cyst',
+    'Mediastinal shift',
+    'Nodule/Mass',
+    'Pleural effusion',
+    'Pleural thickening',
+    'Pneumothorax',
+    'Pulmonary fibrosis',
+    'Rib fracture',
+    'COPD',
+    'Lung tumor',
+    'Pneumonia',
+    'Tuberculosis'
+  ];
+
   constructor(private http: HttpClient){
   }
 
@@ -52,6 +91,7 @@ export class QuestionComponent implements OnInit {
   }
 
   customMenuDone(){
+    console.log(this.customSymptom);
     this.isCustomMenuFinished = true;
     this.getCustomQuestions();
   }
