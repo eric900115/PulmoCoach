@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 //import { QuestionService } from './../service/question.service';
 
 @Component({
@@ -31,7 +32,9 @@ export class QuestionComponent implements OnInit {
   dbUrl: String = 'http://127.0.0.1:5000/';
   questionNum: number = 0;
 
-  constructor(){
+  uid: string = 'eric20607';
+
+  constructor(private http: HttpClient){
   }
 
   async ngOnInit(){
@@ -146,14 +149,38 @@ export class QuestionComponent implements OnInit {
         if(answer[key][0] === answer[key][1]){
           this.correctAnswer++;
         }
+        else{
+          this.incorrectAnswer++;
+        }
       }
     }
+  }
+
+  async postResult(){
+    let url = this.dbUrl + 'result/' + this.uid;
+    let options = {
+      observe: 'response' as 'response'
+    }
+
+    var currentdate = new Date(); 
+    var datetime = currentdate.getDate() + "/"
+                  + (currentdate.getMonth()+1)  + "/" 
+                  + currentdate.getFullYear() + " "  
+                  + currentdate.getHours() + ":"  
+                  + currentdate.getMinutes() + ":" 
+                  + currentdate.getSeconds();
+    
+    const result = [datetime, this.mode, this.correctAnswer, this.incorrectAnswer + this.correctAnswer];
+
+    this.http.post<any>(url, result, options).subscribe(res =>{
+      //console.log(res);
+    });
   }
 
   endQuiz(){
     this.isQuizCompleted = true;
     this.calculateResult();
-    console.log(this.correctAnswer);
+    this.postResult();
   }
 
   answer(option: string) {

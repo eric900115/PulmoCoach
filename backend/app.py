@@ -40,9 +40,28 @@ class ItemsList(Resource):
     def get(self):
         users = fdb.get('/metaData/', None)
         return jsonify(users)
+    
+class Result(Resource):
+
+    def get(self, uid):
+        history = fdb.get('/result/', None)
+        return jsonify(history)
+
+    def post(self, uid):
+        data = request.get_json()
+        
+        Data = fdb.get('/result', uid)
+        print(data)
+        if Data == None:
+            fdb.put('/result', uid, [data])
+        else:
+            Data += [data]
+            fdb.put('/result', uid, Data)
+
 
 api.add_resource(Item, '/item/<int:num>')
 api.add_resource(ItemsList, '/items')
+api.add_resource(Result, '/result/<string:uid>')
 
 if __name__ == "__main__":
     app.run(port=5000, debug=True)
