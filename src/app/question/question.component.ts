@@ -91,7 +91,6 @@ export class QuestionComponent implements OnInit {
   }
 
   customMenuDone(){
-    console.log(this.customSymptom);
     this.isCustomMenuFinished = true;
     this.getCustomQuestions();
   }
@@ -113,8 +112,27 @@ export class QuestionComponent implements OnInit {
   }
 
   async getCustomData(){
-    const response = await fetch(this.dbUrl + '/item/'  + this.questionNum.toString());
+    let url = this.dbUrl + 'custom';
+
+    const requestData = {
+      'symptom' : this.customSymptom,
+      'gender' : this.customGender,
+      'questionNum' : this.customQuestionNum,
+      'abnormalityRate' : this.customAbnomarlityRate
+    }
+
+    const config = {
+      method: 'POST',
+      headers: {
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestData)
+    }
+
+    const response = await fetch(url, config);
     const data = await response.json();
+
     return data;
   }
 
