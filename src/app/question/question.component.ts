@@ -14,6 +14,7 @@ export class QuestionComponent implements OnInit {
   public questionList: any = [];
   public AnswerList: Record<string, any>[] = [];
   public ImgURL: any = [];
+  public ImgLabelURL: any = [];
   public currentQuestion: number = 0;
   public currentSubQuestion: number = 0;
   public points: number = 0;
@@ -38,6 +39,10 @@ export class QuestionComponent implements OnInit {
   customAbnomarlityRate: number;
   customQuestionNum: number;
   customGender: string;
+
+  firebaseStorage: string = ''
+  imgDbURL: string = this.firebaseStorage + 'test/';
+  imgLabelDbURL: string = this.firebaseStorage + 'test_label/';
 
   Gender = [
     'Male',
@@ -158,7 +163,8 @@ export class QuestionComponent implements OnInit {
 
       this.questionList.push(question);
       this.AnswerList.push(answer);
-      this.ImgURL.push(data['img'])
+      this.ImgURL.push(this.imgDbURL + id + '.png');
+      this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
     }
   }
 
