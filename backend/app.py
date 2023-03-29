@@ -9,7 +9,7 @@ import random
 import math
 import csv
 
-db_url = #TODO
+db_url = 'https://pulmocoach-a3593-default-rtdb.asia-southeast1.firebasedatabase.app/'#TODO
 fdb = firebase.FirebaseApplication(db_url, None)
 
 labels = {}

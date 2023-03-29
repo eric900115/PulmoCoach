@@ -10,6 +10,7 @@ import { QuestionComponent } from './question/question.component';
 import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { HistoryComponent } from './history/history.component';
+import { ComponentNameComponent } from './component-name/component-name.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HistoryComponent } from './history/history.component';
     QuestionComponent,
     HeaderComponent,
     MenuComponent,
-    HistoryComponent
+    HistoryComponent,
+    ComponentNameComponent
   ],
   imports: [
     BrowserModule,
