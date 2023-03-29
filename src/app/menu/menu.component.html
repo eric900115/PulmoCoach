@@ -1,13 +1,17 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 <div class = "grid-container">
 	<div class = "grid-left">
 		<div><img id = "user_img" src="https://res.cloudinary.com/startup-grind/image/upload/c_fill,dpr_2,f_auto,g_center,q_auto:good/v1/gcs/platform-data-dsc/events/small-logo.png" alt="user_img"></div>
+        
 		<div><p id = "user_name">User Name</p></div>
 		
-        <div>
+        <!-- <div>
             <button id="Home_btn" class="home_btn">
                 Home
             </button>
-        </div>
+        </div> -->
 		<div>
             <button id="Tutorial_btn" class="home_btn" routerLink="/menu" (click)="changeMode('Tutorial')">
                 CXR Tutorial
@@ -46,6 +50,38 @@
 		<div id = "about_us">
 			<h2 id = "about_us_h2">About Us</h2>
 			<hr id = "about_us_hr">
+<pre id = "about_us_paragraph">
+    Medical imaging has been widely used as an 
+examination method in hospitals due to its non-
+invasive characteristic. Among them,chest 
+radiographs, also known as chest x-rays or CXRs,
+are the most common. However, there have not been
+many interactive resources that help medical school
+students and other healthcare providers learn how 
+to interpret medical images. Therefore, the learning
+curve for chest radiograph interpretation can be 
+steep and challenging for beginners.
+            
+    Based on this situation, our team, composed of 
+members from departments of computer science, 
+electrical engineering, biomedical engineering, and 
+medicine, decided to build a website that can serve 
+as a tutorial and self-evaluation resource aimed at 
+assisting healthcare providers new to CXR 
+interpretation in better understanding some of the 
+most crucial findings in CXR.
+                
+    Our platform is free and open-source, and our 
+data is also based on open-source atasets. There 
+are plenty of interesting images with accurate 
+lesion localization and annotations made by 
+professional radiologists. So make sure to try 
+it out!
+                
+    We are looking forward to incorporating AI 
+diffusion model assistance in the future to make 
+image comparisons and lesion localization easier.
+</pre>
 		</div>
 	</div>
 </div>

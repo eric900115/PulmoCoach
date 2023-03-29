@@ -1,25 +1,29 @@
 .grid-container {
   display: grid;
   grid-template-columns: 25% 0.2% 74.8%;
-  grid-template-rows: 10% 80% 10%;
+  grid-template-rows: 10% 80% 9.9% 0.1%;
   justify-content: space-evenly;
   border-style: solid;
   border-width: 0.15rem;
   border-color: white;
-  margin: 0.2rem;
+  margin: 2rem  1.5rem;
+  max-height: 95vh;
 }
 
 .grid-left {
   padding-top: 10%;
   padding-bottom: 5%;
   grid-column: 1/2;
-  grid-row: auto;
   text-align: center;
 }
 
 .grid-right {
   grid-column: 3/4;
+  grid-row:1/3;
   text-align: center;
+  overflow-y: scroll;
+
+
 }
 
 .grid_midline {
@@ -48,7 +52,7 @@
   padding-top: 3%;
   padding-bottom: 3%;
   width: 60%;
-  margin:3%;
+  margin:4%;
   border: 1% white solid;
   border-radius: 50%;
   background-color: black;
@@ -60,7 +64,7 @@
 #about_us {
   padding-left: 10%;
   padding-right: 10%;
-  font-size: 2.5rem;
+  font-size: 2rem;
   text-align: left;
   margin: 0;
 }
@@ -68,8 +72,27 @@
 #about_us_h2 {
   margin-top: 5%;
   margin-bottom: 0;
+  font-family: 'Poiret One', cursive;
+  font-size: 5rem;
 }
 
 #about_us_hr {
-  margin: 0;
+
+  border-top: 3px solid #ffffff;
+  opacity: 1;
+
+}
+
+#user_name{
+  font-family: 'Poiret One', cursive;
+}
+
+#about_us_paragraph{
+  text-align: middle;
+  font-size: 1.45rem;
+  
+}
+
+button:hover{
+  box-shadow: 0px 0px 15px rgb(255, 255, 255);
 }

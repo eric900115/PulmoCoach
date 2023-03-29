@@ -78,6 +78,35 @@ export class QuestionComponent implements OnInit {
     'Tuberculosis'
   ];
 
+  // 0327 add
+  // let Qusetion_Map = new Map([
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3'],
+  //   ['key1', 'value1'],
+  //   ['key2', 'value2'],
+  //   ['key3', 'value3']
+  // ]);
+  // 0327 add
+
   constructor(private http: HttpClient){
   }
 
@@ -110,9 +139,10 @@ export class QuestionComponent implements OnInit {
     this.getQuestions(data);
   }
 
-  async getRandomData(){
+  async getRandomData(){//////
     const response = await fetch(this.dbUrl + '/item/'  + this.questionNum.toString());
     const data = await response.json();
+    console.log(data);
     return data;
   }
 

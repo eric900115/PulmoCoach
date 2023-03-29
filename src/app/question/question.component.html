@@ -1,3 +1,6 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
 <div>
   <div>
     <div>
@@ -28,9 +31,9 @@
               </option>
             </select>
           </div>
-          <button routerLink="/menu" class="custom_normal_text arrow" style="font-size: 2em; height:1em; margin-right: auto; margin-left: 3%; margin-top: 3%; margin-bottom: 1.5%; padding:2%;">Home</button>
-          <button class="custom_normal_text arrow" style="font-size: 2em; height:1em; margin-right: auto; margin-left: 60%; margin-top: 3%; margin-bottom: 1.5%; padding:2%;">Clear</button>
-          <button (click)="customMenuDone()" class="custom_normal_text arrow" style="font-size: 2em; height:1em; margin-right: auto; margin-left: 3%; margin-top: 3%; margin-bottom: 1.5%; padding:2%;">Start</button>
+          <button id = "custom_home_btn" routerLink="/menu" class="custom_normal_text arrow" style="font-size: 2em;">Home</button>
+          <button id = "custom_clear_btn" class="custom_normal_text arrow" style="font-size: 2em;">Clear</button>
+          <button id = "custom_start_btn" (click)="customMenuDone()" class="custom_normal_text arrow" style="font-size: 2em;">Start</button>
         </div>
       </ng-container>
 
@@ -62,7 +65,7 @@
 						<img id="photo" src={{this.ImgURL[currentQuestion]}} alt="user_img">
 					</div>
 					
-          <div class="grid_midline"></div>
+          <!-- <div class="grid_midline"></div> -->
 					
           <div class="top_btn">
 						<button id="back" (click)="prevQuestion()" [disabled]="(currentQuestion === 0) 
@@ -72,12 +75,12 @@
 						<button id="end_quiz" (click)="endQuiz()">End Quiz</button>
 					</div>
 					
-          <div class="Q">{{questionList[currentQuestion][currentSubQuestion][0]}}
-            QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion
+          <div class="Q">{{questionList[currentQuestion][currentSubQuestion][0]}}?
+            <!-- QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion -->
           </div>
 					<div class="hint"> 
-						<p id="hint">HintHintHintHintHintHintHintHintHintHintHintHintHintHintHint</p>
-						<button id="hint_btn">Hint</button>
+						<!-- <p id="hint">HintHintHintHintHintHintHintHintHintHintHintHintHintHintHint</p>
+						<button id="hint_btn">Hint</button> -->
 					</div>
 					<div class="answer">
 						<button id="present" (click)="answer('YES')">Present</button>
@@ -105,7 +108,6 @@
             </div>
             <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">History</p>
             <div class="link-top"></div>
-            <p>HI!!!</p>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
               <p class="normal_text" style="font-size: 2em;">Question</p>
               <p class="normal_text" style="font-size: 2em;">Answer</p>
@@ -119,7 +121,7 @@
                 <p class="normal_text" style="font-size: 1.75em;">{{item.value[1]}}</p>
               </div>
             </div>
-            <button routerLink="/menu" class="normal_text" style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
+            <button id = "result_home_btn"routerLink="/menu" class="normal_text" style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
           </div>
         </div>
       </ng-container>
