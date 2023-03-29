@@ -40,7 +40,7 @@ export class QuestionComponent implements OnInit {
   customQuestionNum: number;
   customGender: string;
 
-  firebaseStorage: string = ''
+  firebaseStorage: string = 'https://storage.googleapis.com/pulmocoach-a3593.appspot.com/'
   imgDbURL: string = this.firebaseStorage + 'test/';
   imgLabelDbURL: string = this.firebaseStorage + 'test_label/';
 

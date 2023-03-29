@@ -9,7 +9,7 @@ import random
 import math
 import csv
 
-db_url = #TODO
+db_url = 'https://storage.googleapis.com/pulmocoach-a3593.appspot.com'
 fdb = firebase.FirebaseApplication(db_url, None)
 
 labels = {}
@@ -68,13 +68,13 @@ class Item(Resource):
         label = dict(random.sample(labels.items(), num))
         data = {}
         for v in label:
-            data[v] = (fdb.get('/metaData', v))
+            data[v] = (fdb.get('/label', v))
         return jsonify(data)
 
 class ItemsList(Resource):
 
     def get(self):
-        users = fdb.get('/metaData/', None)
+        users = fdb.get('/label/', None)
         return jsonify(users)
     
 class Result(Resource):
@@ -129,7 +129,7 @@ class custom(Resource):
         label = dict(abnormalQuestion, **normalQuestion)
 
         for v in label:
-            data[v] = (fdb.get('/metaData', v))
+            data[v] = (fdb.get('/label', v))
 
         return jsonify(data)
 
