@@ -51,7 +51,7 @@ export class QuestionComponent implements OnInit {
   ];
 
   Symptom = [
-    'Aortic enlargement',
+    'Aortic',
     'Atelectasis',
     'Calcification',
     'Cardiomegaly',
@@ -79,12 +79,35 @@ export class QuestionComponent implements OnInit {
   ];
 
   // 0327 add
-  // let Qusetion_Map = new Map([
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
+  Qusetion_Map = new Map([
+    ['Aortic', 'v1'],
+    ['Atelectasis', 'v2'],
+    ['Calcification', 'Any signs of calcifications? They appear bright and white!'],
+    ['Cardiomegaly', 'v4'],
+    ['Clavicle fracture', 'v5'],
+    ['Cardiomegaly', 'v1'],
+    ['Clavicle fracture', 'v1'],
+    ['Consolidation', 'v1'],
+    ['Edema', 'v1'],
+    ['Emphysema', 'Shape of the diaphragm: may be flattened bilaterally in chronic asthma or emphysema, may be flattened unilaterally in case of tension pneumothorax or foreign body aspiration'],
+    ['Enlarged PA', 'v1'],
+    ['ILD', 'v1'],
+    ['Infiltration', 'v1' ],
+    ['Lung Opacity', 'v1'],
+    ['Lung cavity', 'v1'],
+    ['Lung cyst', 'v1'],
+    ['Mediastinal shift', 'v1'],
+    ['Nodule/Mass', 'v1'],
+    ['Pleural effusion', 'v1'],
+    ['Pleural thickening', 'v1'],
+    ['Pneumothorax', 'v1'],
+    ['Pulmonary fibrosis', 'v1'],
+    ['Rib fracture', 'v1'],
+    ['COPD', 'v1'],
+    ['Lung tumor', 'v1'],
+    ['Pneumonia', 'v1'],
+    ['Tuberculosis','']
+  ]);
   //   ['key3', 'value3'],
   //   ['key1', 'value1'],
   //   ['key2', 'value2'],
@@ -104,7 +127,6 @@ export class QuestionComponent implements OnInit {
   //   ['key1', 'value1'],
   //   ['key2', 'value2'],
   //   ['key3', 'value3']
-  // ]);
   // 0327 add
 
   constructor(private http: HttpClient){
@@ -302,4 +324,23 @@ export class QuestionComponent implements OnInit {
     return this.progress;
   }
 
+  hint_showed = 0;
+
+  show_hint(){
+    this.hint_showed = this.hint_showed+1;
+    if(this.hint_showed%2 === 1){
+      var ele = document.getElementById("hint")as HTMLElement;;
+      console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
+      const p =  (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0]))as string;
+      console.log("this is p");
+      console.log(typeof(p));
+      ele.textContent = p;
+    }
+    else{
+      var ele = document.getElementById("hint")as HTMLElement;;
+      ele.textContent = "";
+    }
+  }
+
 }
+

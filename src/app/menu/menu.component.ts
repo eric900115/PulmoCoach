@@ -10,4 +10,7 @@ export class MenuComponent {
   changeMode(Mode: string) {
     localStorage.setItem('mode', Mode);
   }
+  openPdf(){
+    window.open('/assets/Pulmocoach_tutorial.pdf')
+  }
 }
