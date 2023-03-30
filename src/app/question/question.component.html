@@ -79,8 +79,10 @@
             <!-- QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion -->
           </div>
 					<div class="hint"> 
-						<!-- <p id="hint">HintHintHintHintHintHintHintHintHintHintHintHintHintHintHint</p>
-						<button id="hint_btn">Hint</button> -->
+            <button id="hint_btn" (click)="hintBtn()">Hint</button>
+            <ng-container *ngIf="isHint">
+						  <p id="hint">CP angle blunting is a useful sign for identifying Pleural Effusions.</p>
+            </ng-container>
 					</div>
 					<div class="answer">
 						<button id="present" (click)="answer('YES')">Present</button>
