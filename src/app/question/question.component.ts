@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
+import { NONE_TYPE } from '@angular/compiler';
 //import { QuestionService } from './../service/question.service';
 
 @Component({
@@ -18,6 +19,7 @@ export class QuestionComponent implements OnInit {
   public currentQuestion: number = 0;
   public currentSubQuestion: number = 0;
   public points: number = 0;
+  Show_CurrentImagePath = [true, true, true, true, true];
   counter = 60;
   correctAnswer: number = 0;
   incorrectAnswer: number = 0;
@@ -390,6 +392,11 @@ export class QuestionComponent implements OnInit {
         ele.textContent = '';
       }
     }
+  }
+
+  showImg(option: number) {
+    this.Show_CurrentImagePath[option] = !this.Show_CurrentImagePath[option]
+    console.log("result: ", this.Show_CurrentImagePath[0], this.Show_CurrentImagePath[1], this.Show_CurrentImagePath[2])
   }
 
 }

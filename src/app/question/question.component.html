@@ -114,11 +114,13 @@
               <p class="normal_text" style="font-size: 2em;">Your Answer</p>
             </div>
   
-            <div *ngFor="let answer of AnswerList">
+            <div *ngFor="let answer of AnswerList; let i = index">
               <div *ngFor="let item of answer | keyvalue" style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
                 <p class="normal_text" style="font-size: 1.75em;">{{item.key}}</p>
                 <p class="normal_text" style="font-size: 1.75em;">{{item.value[0]}}</p>
                 <p class="normal_text" style="font-size: 1.75em;">{{item.value[1]}}</p>
+                <button class="custom_normal_text arrow" style="border-radius:100%; padding: 5%; margin: auto;" (click)="showImg(i)">img</button>
+                <img  [hidden]="Show_CurrentImagePath[i]" [src]="ImgLabelURL[i]" style="width: 50%;"/>
               </div>
             </div>
             <button id = "result_home_btn"routerLink="/menu" class="normal_text" style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
