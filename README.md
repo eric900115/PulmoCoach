@@ -45,12 +45,12 @@ For the machine learning model, we develop the model by using tensorflow
         <p style = "text-align:center;size:0.25rem;">NTHU CS</p>
     </div>
     <div  style = "margin-right:6.5%;">
-        <img src = "/images/sht.png" border-radius=100%/>
+        <img src = "./images/sht.png" style = "border-radius:100%; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Hsiao-Ting Shao</p>
         <p style = "text-align:center;size:0.25rem;">NYCU CS</p>
     </div>
     <div  style = "margin-right:6.5%;">
-        <img src = "./images/ccl.png" border-radius="50%"/>
+        <img src = "./images/ccl.png" border-radius="100%" style = "height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Cheng-Lin Chen</p>
         <p style = "text-align:center;size:0.25rem;">NTHU CS</p>
     </div>
