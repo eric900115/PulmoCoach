@@ -1,7 +1,9 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-<div class = "grid-container">
+
+<!-- <div class = "grid-container"> -->
+<div style="display:flex; flex-direction: row; background-color:black; margin:3%; border-color:white; border-width:0.1em; border-style:solid;" >
 	<div class = "grid-left">
 		<div><img id = "user_img" src="assets/pulmo_coach_logo.jpg" alt="user_img"></div>
         
@@ -45,43 +47,15 @@
 	</div>
 
 	<div class = "grid_midline"></div>
+    <!-- <hr /> -->
 	
     <div class = "grid-right">
 		<div id = "about_us">
 			<h2 id = "about_us_h2">About Us</h2>
 			<hr id = "about_us_hr">
-<pre id = "about_us_paragraph">
-    Medical imaging has been widely used as an 
-examination method in hospitals due to its non-
-invasive characteristic. Among them,chest 
-radiographs, also known as chest x-rays or CXRs,
-are the most common. However, there have not been
-many interactive resources that help medical school
-students and other healthcare providers learn how 
-to interpret medical images. Therefore, the learning
-curve for chest radiograph interpretation can be 
-steep and challenging for beginners.
-            
-    Based on this situation, our team, composed of 
-members from departments of computer science, 
-electrical engineering, biomedical engineering, and 
-medicine, decided to build a website that can serve 
-as a tutorial and self-evaluation resource aimed at 
-assisting healthcare providers new to CXR 
-interpretation in better understanding some of the 
-most crucial findings in CXR.
-                
-    Our platform is free and open-source, and our 
-data is also based on open-source atasets. There 
-are plenty of interesting images with accurate 
-lesion localization and annotations made by 
-professional radiologists. So make sure to try 
-it out!
-                
-    We are looking forward to incorporating AI 
-diffusion model assistance in the future to make 
-image comparisons and lesion localization easier.
-</pre>
+            <pre id = "about_us_paragraph">
+                {{AboutUs}}
+            </pre>
 		</div>
 	</div>
 </div>

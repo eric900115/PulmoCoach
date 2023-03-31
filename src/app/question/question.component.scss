@@ -7,10 +7,10 @@ option{
   border-style: solid;
   border-width: 0.15rem;
   border-color: white;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
   margin: 2rem  1.5rem;
-  max-height: 95vh;
+  // max-height: 95vh;
   // min-height: 90vh;
 }
 
@@ -34,7 +34,7 @@ option{
 .arrow {
   background-color: transparent; 
   border-color: white; 
-  border-width: 0.01em; 
+  border-width: 0.05em; 
   align-self: center;
 }
 
@@ -409,9 +409,9 @@ h1 {
   font-family: 'Poiret One', cursive;
   text-align: top;
   padding:2%;
-  margin-left: 4%; 
-  margin-top: 5%; 
-  margin-right: 55%;
+  // margin-left: 4%; 
+  // margin-top: 5%; 
+  // margin-right: 55%;
   border-radius: 50%;
 }
 
@@ -423,9 +423,9 @@ h1 {
   font-family: 'Poiret One', cursive;
   text-align: top;
   padding:2%;
-  margin-left: 3%; 
-  margin-top: 5%; 
-  margin-right: 4%;
+  // margin-left: 3%; 
+  // margin-top: 5%; 
+  // margin-right: 4%;
   border-radius: 50%;
 }
 
@@ -441,9 +441,9 @@ h1 {
   font-family: 'Poiret One', cursive;
   text-align: top;
   padding:2%;
-  margin-left: 4%; 
-  margin-top: 5%; 
-  margin-right: 0%;
+  // margin-left: 4%; 
+  // margin-top: 5%; 
+  // margin-right: 0%;
   border-radius: 50%;
 }
 

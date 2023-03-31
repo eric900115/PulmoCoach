@@ -11,28 +11,32 @@
 }
 
 .grid-left {
-  padding-top: 10%;
-  padding-bottom: 5%;
-  grid-column: 1/2;
+  margin-top: 5%;
+  // padding-bottom: 5%;
+  // grid-column: 1/10;
+  width: 30%;
   text-align: center;
+  // overflow: scroll;
+  // height: 100%;
 }
 
 .grid-right {
-  grid-column: 3/4;
-  grid-row:1/3;
+  // grid-column: 3/4;
+  // grid-row:1/3;
+  width: 80%;
   text-align: center;
-  overflow-y: scroll;
+  // overflow-y: scroll;
 
 
 }
-
 .grid_midline {
-  grid-column: 2/3;
-  grid-row:2/3;
-  margin-top: 10%;
-  margin-bottom: 10%;
-  background-color: white;
-}
+  // height:100%;
+  padding-block: 10%;
+  width:1px;
+  border-width:0;
+  color:#FFFFFF;
+  background-color:#FFFFFF;
+ }
 
 #user_img {
   border-radius: 50rem; 
@@ -77,10 +81,9 @@
 }
 
 #about_us_hr {
-
-  border-top: 3px solid #ffffff;
+  border-top: 2px solid #ffffff;
   opacity: 1;
-
+  margin-top: 5%;
 }
 
 #user_name{
@@ -90,7 +93,9 @@
 #about_us_paragraph{
   text-align: middle;
   font-size: 1.45rem;
-  
+  width:100%;
+  white-space: pre-wrap;
+  margin-inline: auto;
 }
 
 button:hover{
