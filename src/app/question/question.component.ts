@@ -19,6 +19,7 @@ export class QuestionComponent implements OnInit {
   public currentQuestion: number = 0;
   public currentSubQuestion: number = 0;
   public points: number = 0;
+  hidden_hint: boolean = true;
   Show_CurrentImagePath = [true, true, true, true, true];
   counter = 60;
   correctAnswer: number = 0;
@@ -352,6 +353,8 @@ export class QuestionComponent implements OnInit {
       this.getProgressPercent();
     }
 
+    this.hidden_hint = true;
+
   }
 
   getProgressPercent() {
@@ -366,6 +369,7 @@ export class QuestionComponent implements OnInit {
   hint_showed = 0;
 
   show_hint(){
+    this.hidden_hint = !this.hidden_hint;
     if(!this.isCustom){
       this.hint_showed = this.hint_showed+1;
       if(this.hint_showed%2 === 1){
