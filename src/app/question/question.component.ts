@@ -51,7 +51,7 @@ export class QuestionComponent implements OnInit {
   ];
 
   Symptom = [
-    'Aortic',
+    'Aortic enlargement',
     'Atelectasis',
     'Calcification',
     'Cardiomegaly',
@@ -80,7 +80,7 @@ export class QuestionComponent implements OnInit {
 
   // 0327 add
   Qusetion_Map = new Map([
-    ['Aortic', 'v1'],
+    ['Aortic enlargement', 'v1'],
     ['Atelectasis', 'v2'],
     ['Calcification', 'Any signs of calcifications? They appear bright and white!'],
     ['Cardiomegaly', 'v4'],
@@ -327,18 +327,20 @@ export class QuestionComponent implements OnInit {
   hint_showed = 0;
 
   show_hint(){
-    this.hint_showed = this.hint_showed+1;
-    if(this.hint_showed%2 === 1){
-      var ele = document.getElementById("hint")as HTMLElement;;
-      console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
-      const p =  (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0]))as string;
-      console.log("this is p");
-      console.log(typeof(p));
-      ele.textContent = p;
-    }
-    else{
-      var ele = document.getElementById("hint")as HTMLElement;;
-      ele.textContent = "";
+    if(!this.isCustom){
+      this.hint_showed = this.hint_showed+1;
+      if(this.hint_showed%2 === 1){
+        var ele = document.getElementById("hint")as HTMLElement;;
+        console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
+        const p =  (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0]))as string;
+        console.log("this is p");
+        console.log(typeof(p));
+        ele.textContent = p;
+      }
+      else{
+        var ele = document.getElementById("hint")as HTMLElement;;
+        ele.textContent = "";
+      }
     }
   }
 
