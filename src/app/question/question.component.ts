@@ -35,6 +35,8 @@ export class QuestionComponent implements OnInit {
 
   uid: string = 'eric20607';
 
+  isHint: boolean = false;
+
   customSymptom: string;
   customAbnomarlityRate: number;
   customQuestionNum: number;
@@ -218,6 +220,36 @@ export class QuestionComponent implements OnInit {
       this.ImgURL.push(this.imgDbURL + id + '.png');
       this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
     }
+    if(this.isCustom){
+      this.questionList = [[['Do you see the presence of Pleural Effusion in the CXR?']],
+                        [['Do you see the presence of Pleural Effusion in the CXR?']],
+                        [['Do you see the presence of Pleural Effusion in the CXR?']],
+                        [['Do you see the presence of Pleural Effusion in the CXR?']],
+                        [['Do you see the presence of Pleural Effusion in the CXR?']]];
+      this.AnswerList = [{'1' : ['YES', 'Not Answered']},
+                          {'2' : ['YES', 'Not Answered']},
+                          {'3' : ['No', 'Not Answered']},
+                          {'4' : ['YES', 'Not Answered']},
+                          {'5' : ['No', 'Not Answered']}];
+      this.ImgURL = ['assets/img/3b5957a38160102563037a3769a383be.png',
+                    'assets/img/6cbf4295b5b72bc01ef6fd171ef7733e.png',
+                    'assets/img/5ef0d0b605f39b09df42d293e87971e3.png',
+                    'assets/img/851111c0d1373209b9cff31baf15dbe2.png',
+                    'assets/img/02425334e92510da663eb913ad0632ea.png']
+      this.ImgLabelURL = ['assets/img/3b5957a38160102563037a3769a383be_label.png',
+                    'assets/img/6cbf4295b5b72bc01ef6fd171ef7733e_label.png',
+                    'assets/img/5ef0d0b605f39b09df42d293e87971e3_label.png',
+                    'assets/img/851111c0d1373209b9cff31baf15dbe2_label.png',
+                    'assets/img/02425334e92510da663eb913ad0632ea_label.png']
+    }
+    console.log(this.questionList)
+    console.log(this.AnswerList)
+    console.log(this.ImgURL)
+    console.log(this.ImgLabelURL)
+  }
+
+  hintBtn(){
+    this.isHint = !this.isHint;
   }
 
   startQuiz(){
@@ -255,7 +287,12 @@ export class QuestionComponent implements OnInit {
     // this.AnswerList[this.currentQuestion][symptom][0] is the correct answer of problem
     // this.AnswerList[this.currentQuestion][symptom][1] is the answer entered by user
     const symptom: string = this.questionList[this.currentQuestion][this.currentSubQuestion][0];
-    this.AnswerList[this.currentQuestion][symptom][1] = option;
+    if(this.isCustom){
+      this.AnswerList[this.currentQuestion][(this.currentQuestion+1).toString()][1] = option;
+    }
+    else{
+      this.AnswerList[this.currentQuestion][symptom][1] = option;
+    }
   }
 
   calculateResult(){
@@ -295,8 +332,8 @@ export class QuestionComponent implements OnInit {
 
   endQuiz(){
     this.isQuizCompleted = true;
-    this.calculateResult();
-    this.postResult();
+    //this.calculateResult();
+    //this.postResult();
   }
 
   answer(option: string) {
@@ -340,6 +377,17 @@ export class QuestionComponent implements OnInit {
       else{
         var ele = document.getElementById("hint")as HTMLElement;;
         ele.textContent = "";
+      }
+    }
+    else{
+      this.isHint = !this.isHint;
+      if(this.isHint){
+        var ele = document.getElementById("hint")as HTMLElement;;
+        ele.textContent = 'CP angle blunting is a useful sign for identifying Pleural Effusions.';
+      }
+      else{
+        var ele = document.getElementById("hint")as HTMLElement;;
+        ele.textContent = '';
       }
     }
   }
