@@ -34,8 +34,9 @@ For the machine learning model, we develop the model by using tensorflow
 ##### We are students from NYCU GDSC Taiwan. Following are the member list.
 <br>
 <div style = " display : flex;">
+    <img src = "./images/team.png">
     <div style = "margin-right:6.5%;">
-        <img src = "./images/cgy.png" style = "border-radius:100%; height:23vh; width :23vh;">
+        <img src = "./images/cgy.png" style = "border-radius :100%; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Guan-Yuan Chen</p>
         <p style = "text-align:center;size:0.25rem;">NYCU Medicine</p>
     </div>
@@ -50,7 +51,7 @@ For the machine learning model, we develop the model by using tensorflow
         <p style = "text-align:center;size:0.25rem;">NYCU CS</p>
     </div>
     <div  style = "margin-right:6.5%;">
-        <img src = "./images/ccl.png" border-radius="100%" style = "height:23vh; width :23vh;">
+        <img src = "./images/ccl.png"  style = "border-radius:100%; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Cheng-Lin Chen</p>
         <p style = "text-align:center;size:0.25rem;">NTHU CS</p>
     </div>
