@@ -18,7 +18,7 @@
 ## Technical Strucutre 
 &emsp;
 
-<img src = '/PulmoCoach/blob/dev/images/archetecture_flow.png'>
+<img src = '/PulmoCoach/images/archetecture_flow.png'>
 &emsp;
 <p>Our website is powered by a seamless integration of front-end and back-end technologies. We selected Angular as our front-end framework and utilized the dynamic capabilities of Flask and Firebase for the back-end. We entrust Flask to provide APIs for our front-end framework and the Firebase Realtime Database and Firestore for our data and metadata storage. For secure and reliable authentication, we have incorporated the Google Login API. Our website is now hosted on local computer, and will be deployed on the state-of-the-art GCP Platform soon.
 For the machine learning model, we develop the model by using tensorflow
@@ -35,22 +35,22 @@ For the machine learning model, we develop the model by using tensorflow
 <br>
 <div style = " display : flex;">
     <div style = "margin-right:6.5%;">
-        <img src = "/PulmoCoach/blob/dev/images/cgy.png" style = "border-radius:100%; height:23vh; width :23vh;">
+        <img src = "/PulmoCoach/images/cgy.png" style = "border-radius:100%; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Guan-Yuan Chen</p>
         <p style = "text-align:center;size:0.25rem;">NYCU Medicine</p>
     </div>
     <div  style = "margin-right:6.5%;">
-        <img src = "/PulmoCoach/blob/dev/images/syc.png" style = "border-radius:30rem; height:23vh; width :23vh;">
+        <img src = "/PulmoCoach/images/syc.png" style = "border-radius:30rem; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Yung-Cheng Su</p>
         <p style = "text-align:center;size:0.25rem;">NTHU CS</p>
     </div>
     <div  style = "margin-right:6.5%;">
-        <img src = "/PulmoCoach/blob/dev/images/sht.png" style = "border-radius:100%; height:23vh; width :23vh;">
+        <img src = "/PulmoCoach/images/sht.png" style = "border-radius:100%; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Hsiao-Ting Shao</p>
         <p style = "text-align:center;size:0.25rem;">NYCU CS</p>
     </div>
     <div  style = "margin-right:6.5%;">
-        <img src = "/PulmoCoach/blob/dev/images/ccl.png" style = "border-radius:100%; height:23vh; width :23vh;">
+        <img src = "/PulmoCoach/images/ccl.png" style = "border-radius:100%; height:23vh; width :23vh;">
         <p style = "text-align:center;size:0.25rem;">Cheng-Lin Chen</p>
         <p style = "text-align:center;size:0.25rem;">NTHU CS</p>
     </div>
