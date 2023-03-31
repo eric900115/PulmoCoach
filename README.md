@@ -18,7 +18,7 @@
 ## Technical Strucutre 
 &emsp;
 
-<img src = '/images/architecture.png'>
+<img src = '/images/Architecture.png'>
 &emsp;
 <p>Our website is powered by a seamless integration of front-end and back-end technologies. We selected Angular as our front-end framework and utilized the dynamic capabilities of Flask and Firebase for the back-end. We entrust Flask to provide APIs for our front-end framework and the Firebase Realtime Database and Firestore for our data and metadata storage. For secure and reliable authentication, we have incorporated the Google Login API. Our website is now hosted on local computer, and will be deployed on the state-of-the-art GCP Platform soon.
 For the machine learning model, we develop the model by using tensorflow
