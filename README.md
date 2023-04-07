@@ -6,8 +6,8 @@ To run the PulmoCoach web frontend and backend locally, follow these steps:
 ### Prerequisites
 Before running the application, ensure that the following are installed on your machine:
 
-Node.js and npm (Node Package Manager): You can download them from https://nodejs.org/
-Python 3.x: You can download it from https://www.python.org/downloads/
+Node.js and npm (Node Package Manager): You can download them from https://nodejs.org/<br>
+Python 3.x: You can download it from https://www.python.org/downloads/<br>
 Git: You can download it from https://git-scm.com/downloads
 ### Clone the Repository
 Open your terminal/command prompt and navigate to the directory where you want to clone the repository.
