@@ -199,32 +199,54 @@ export class QuestionComponent implements OnInit {
   }
 
   getQuestions(Data: Object){
-  
-    for (const [id, data] of Object.entries(Data)) {
 
-      const question: string[][] = [];
-      //const answer: any = {};
-      let answer: Record<string, any> = {};
-      
-      for(const [symptom, v] of Object.entries(data['symptom'])){
+    if(!this.isCustom){
+      for (const [id, data] of Object.entries(Data)) {
+
+        const question: string[][] = [];
+        //const answer: any = {};
+        let answer: Record<string, any> = {};
         
-        question.push([symptom, 'YES', 'NO']);
+        for(const [symptom, v] of Object.entries(data['symptom'])){
+          
+          question.push([symptom, 'YES', 'NO']);
 
-        if(v == ''){
-          answer[symptom] = ['NO', 'Not Answered'];
+          if(v == ''){
+            answer[symptom] = ['NO', 'Not Answered'];
+          }
+          else{
+            answer[symptom] = ['YES', 'Not Answered'];
+          }
+        }
+
+        this.questionList.push(question);
+        this.AnswerList.push(answer);
+        this.ImgURL.push(this.imgDbURL + id + '.png');
+        this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
+      }
+    }
+    else{
+      let i : number = 1;
+      for (const [id, data] of Object.entries(Data)) {
+
+        const question: string[][] = [];
+        //const answer: any = {};
+        let answer: Record<string, any> = {};
+        const str: string = String(i);
+        if(data['symptom'][this.customSymptom] == ''){
+          answer[str] = ['NO', 'Not Answered']
         }
         else{
-          answer[symptom] = ['YES', 'Not Answered'];
+          answer[str] = ['YES', 'Not Answered']
         }
-      }
 
-      this.questionList.push(question);
-      this.AnswerList.push(answer);
-      this.ImgURL.push(this.imgDbURL + id + '.png');
-      this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
-    }
-    if(this.isCustom){
-      this.questionList = [[['Do you see the presence of Pleural Effusion in the CXR?']],
+        this.questionList.push([['Do you see the presence of ' + this.customSymptom + 'in the CXR?']]);
+        this.AnswerList.push(answer);
+        this.ImgURL.push(this.imgDbURL + id + '.png');
+        this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
+        i += 1;
+      }
+      /*this.questionList = [,
                         [['Do you see the presence of Pleural Effusion in the CXR?']],
                         [['Do you see the presence of Pleural Effusion in the CXR?']],
                         [['Do you see the presence of Pleural Effusion in the CXR?']],
@@ -244,11 +266,12 @@ export class QuestionComponent implements OnInit {
                     'assets/img/5ef0d0b605f39b09df42d293e87971e3_label.png',
                     'assets/img/851111c0d1373209b9cff31baf15dbe2_label.png',
                     'assets/img/02425334e92510da663eb913ad0632ea_label.png']
+      */
     }
-    console.log(this.questionList)
+    /*console.log(this.questionList)
     console.log(this.AnswerList)
     console.log(this.ImgURL)
-    console.log(this.ImgLabelURL)
+    console.log(this.ImgLabelURL)*/
   }
 
   hintBtn(){
