@@ -141,6 +141,12 @@ export class QuestionComponent implements OnInit {
     this.name = localStorage.getItem('name')!;
     this.mode = localStorage.getItem("mode") || "";
     this.questionNum = 2;
+
+    const infos = JSON.parse(localStorage.getItem('infos') || '');
+    const idNumL = infos['id_numL'];
+    this.uid = idNumL;
+
+    console.log(this.uid);
     
     if(this.mode == 'Random Quiz'){
       this.getRandomQuestions();
@@ -358,8 +364,8 @@ export class QuestionComponent implements OnInit {
 
   endQuiz(){
     this.isQuizCompleted = true;
-    //this.calculateResult();
-    //this.postResult();
+    this.calculateResult();
+    this.postResult();
   }
 
   answer(option: string) {

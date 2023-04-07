@@ -5,6 +5,8 @@ from flask_cors import CORS, cross_origin
 
 from firebase import firebase
 
+import requests
+
 import random
 import math
 import csv
@@ -80,7 +82,10 @@ class ItemsList(Resource):
 class Result(Resource):
 
     def get(self, uid):
-        history = fdb.get('/result/', None)
+        history = fdb.get('/result/', uid)
+        print(history)
+        if history is None:
+            return {"error": "Data not found."}, 404
         return jsonify(history)
 
     def post(self, uid):

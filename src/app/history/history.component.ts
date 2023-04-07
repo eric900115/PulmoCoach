@@ -16,13 +16,21 @@ export class HistoryComponent {
   }
 
   async ngOnInit(){
+    const infos = JSON.parse(localStorage.getItem('infos') || '');
+    const idNumL = infos['id_numL'];
+    this.uid = idNumL;
+    console.log(this.uid)
+
     await this.getHistory();
   }
 
   async getHistory(){
     const response = await fetch(this.dbUrl + 'result/'  + this.uid);
     const data = await response.json();
-    this.records = Object.entries(data)[0][1];
+    const entries = Object.entries(data);
+    this.records = entries.map(entry => entry[1]);;
+    console.log(Object.entries(data))
+    console.log(this.records)
   }
 
 }
