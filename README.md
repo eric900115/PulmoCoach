@@ -6,13 +6,13 @@ To run the PulmoCoach web frontend and backend locally, follow these steps:
 ### Prerequisites
 Before running the application, ensure that the following are installed on your machine:
 
-Node.js and npm (Node Package Manager): You can download them from https://nodejs.org/<br>
-Angular CLI: You can install it by running the following command in your terminal/command prompt:
+- Node.js and npm (Node Package Manager): You can download them from https://nodejs.org/<br>
+- Angular CLI: You can install it by running the following command in your terminal/command prompt:
 ```bash
 npm install -g @angular/cli
 ```
-Python 3.x: You can download it from https://www.python.org/downloads/<br>
-Git: You can download it from https://git-scm.com/downloads
+- Python 3.x: You can download it from https://www.python.org/downloads/<br>
+- Git: You can download it from https://git-scm.com/downloads
 ### Clone the Repository
 Open your terminal/command prompt and navigate to the directory where you want to clone the repository.
 Run the following command to clone the repository:
