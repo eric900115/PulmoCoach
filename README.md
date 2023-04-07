@@ -1,5 +1,56 @@
 # PulmoCoach
 
+## Running the Web Frontend and Backend Locally
+To run the PulmoCoach web frontend and backend locally, follow these steps:
+
+### Prerequisites
+Before running the application, ensure that the following are installed on your machine:
+
+Node.js and npm (Node Package Manager): You can download them from https://nodejs.org/
+Python 3.x: You can download it from https://www.python.org/downloads/
+Git: You can download it from https://git-scm.com/downloads
+### Clone the Repository
+Open your terminal/command prompt and navigate to the directory where you want to clone the repository.
+Run the following command to clone the repository:
+
+```bash
+git clone https://github.com/eric900115/PulmoCoach.git
+```
+
+### Frontend
+Open a new terminal/command prompt and navigate to the PulmoCoach directory.
+Run the following command to install the required packages:
+
+```bash
+npm install
+```
+
+Run the following command to start the frontend server:
+
+```bash
+npm start
+```
+
+The frontend should now be accessible at http://localhost:4200. 
+```bash
+Note : If the frontend is not running on this URL, the login API may fail.
+```
+### Backend
+Open a new terminal/command prompt and navigate to the PulmoCoach/backend directory.
+Run the following command to install the required packages:
+
+```bash
+pip install -r requirements.txt
+```
+
+Run the following command to start the backend server:
+
+```bash
+python app.py
+```
+
+That's it! You should now be able to access the PulmoCoach web application locally. If you encounter any issues, please refer to the repository's issue tracker or seek assistance from the project contributors.
+
 ## Abstract 
 
 <p> &emsp;&emsp; Medical imaging has been widely used as an examination method in hospitals due to its non-invasive characteristic. Among them,chest radiographs, also known as chest x-rays or CXRs,are the most common. However, there have not been many interactive resources that help medical school students and other healthcare providers learn how to interpret medical images. Therefore, the learningcurve for chest radiograph interpretation can be steep and challenging for beginners.</p>
