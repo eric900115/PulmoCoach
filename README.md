@@ -8,9 +8,9 @@ Before running the application, ensure that the following are installed on your 
 
 Node.js and npm (Node Package Manager): You can download them from https://nodejs.org/<br>
 Angular CLI: You can install it by running the following command in your terminal/command prompt:
-'''bash
+```bash
 npm install -g @angular/cli
-'''
+```
 Python 3.x: You can download it from https://www.python.org/downloads/<br>
 Git: You can download it from https://git-scm.com/downloads
 ### Clone the Repository
