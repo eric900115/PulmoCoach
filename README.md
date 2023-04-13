@@ -22,7 +22,7 @@ git clone https://github.com/eric900115/PulmoCoach.git
 ```
 
 ### Frontend
-Open a new terminal/command prompt and navigate to the PulmoCoach directory.
+Open a new terminal/command prompt and navigate to the <mark>PulmoCoach</mark> directory.
 Run the following command to install the required packages:
 
 ```bash
@@ -40,7 +40,7 @@ The frontend should now be accessible at http://localhost:4200.
 Note : If the frontend is not running on this URL, the login API may fail.
 ```
 ### Backend
-Open a new terminal/command prompt and navigate to the PulmoCoach/backend directory.
+Open a new terminal/command prompt and navigate to the <mark>PulmoCoach/backend</mark> directory.
 Run the following command to install the required packages:
 
 ```bash
