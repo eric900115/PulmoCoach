@@ -2,7 +2,8 @@
 
 ## Demo Video
 Watch a quick demo of our project in action!
-[![Alt text](https://img.youtube.com/vi/ieyXoZJ4PU8&pp=ygUKcHVsbW9jb2FjaA%3D%3D/0.jpg)](https://www.youtube.com/watch?v=ieyXoZJ4PU8&pp=ygUKcHVsbW9jb2FjaA%3D%3D)
+[![Alt text](https://img.youtube.com/vi/ieyXoZJ4PU8%26pp%3DygUKcHVsbW9jb2FjaA%253D%253D/0.jpg)](https://www.youtube.com/watch?v=ieyXoZJ4PU8%26pp%3DygUKcHVsbW9jb2FjaA%253D%253D)
+
 
 ## Running the Web Frontend and Backend Locally
 To run the PulmoCoach web frontend and backend locally, follow these steps:
