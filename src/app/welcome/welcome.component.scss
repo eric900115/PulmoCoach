@@ -1,28 +1,47 @@
-
-h1{
-  font-size: 8em;
+#home_header{
+  font-size: 2em;
   font-family: 'Edu NSW ACT Foundation', cursive;
   text-align: center;
-}
-
-#home_header{
   margin-top: 15%;
   margin-bottom: 3%;
 }
-/*
-#google{
-  text-align: center;
+
+@media (min-width: 500px) {
+  #home_header{
+    font-size: 5em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 3%;
+  }
+}
+
+@media (min-width: 768px) {
+  #home_header{
+    font-size: 7em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 3%;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  #home_header{
+    font-size: 8em;
+    font-family: 'Edu NSW ACT Foundation', cursive;
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 3%;
+  }
+}
+
+#log_in_top{
+  margin-left: 41%; 
+  margin-top: 5%;
 }
 
 #log_in{
-  font-size: 1.5em;
-  background-color: steelblue;
-  border-radius: 1em;
-  padding-left: 5.5% ;
-  padding-top: 2%;
-  padding-bottom: 2%;
-  padding-right: 5.5%;
-  /* margin-left: 50%;
-  margin-right: 50%; */
-//  text-align: center;
-//}
+  display: flex;
+}

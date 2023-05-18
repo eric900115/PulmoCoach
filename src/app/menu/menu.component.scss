@@ -1,43 +1,30 @@
 .grid-container {
-  display: grid;
-  grid-template-columns: 25% 0.2% 74.8%;
-  grid-template-rows: 10% 80% 9.9% 0.1%;
-  justify-content: space-evenly;
-  border-style: solid;
-  border-width: 0.15rem;
-  border-color: white;
-  margin: 2rem  1.5rem;
-  max-height: 95vh;
+  display:flex; 
+  flex-direction: row; 
+  background-color:black; 
+  margin:3%; border-color:white; 
+  border-width:0.1em; 
+  border-style:solid;
 }
 
 .grid-left {
   margin-top: 5%;
-  // padding-bottom: 5%;
-  // grid-column: 1/10;
   width: 30%;
   text-align: center;
-  // overflow: scroll;
-  // height: 100%;
 }
 
 .grid-right {
-  // grid-column: 3/4;
-  // grid-row:1/3;
   width: 80%;
   text-align: center;
-  // overflow-y: scroll;
-
-
 }
 .grid_midline {
-  // height:100%;
   padding-block: 10%;
   width:1px;
   border-width:0;
   color:#FFFFFF;
   background-color:#FFFFFF;
   margin: 3%;
- }
+}
 
 #user_img {
   border-radius: 50rem; 
@@ -46,10 +33,28 @@
 }
 
 #user_name {
-  font-size: 200%;
+  font-size: 0.8rem;
   text-align: center;
   margin-bottom: 3%;
   margin-top: 3%;
+}
+
+@media (min-width: 500px) {
+  #user_name {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+  }
+}
+
+@media (min-width: 1024px) {
+  #user_name {
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3%;
+    margin-top: 3%;
+  }
 }
 
 .home_btn {
