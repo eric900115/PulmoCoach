@@ -1,52 +1,12 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-
-
-<div class = "grid-container" >
-	<div class = "grid-left">
-		<div><img id = "user_img" src="assets/pulmo_coach_logo.jpg" alt="user_img"></div>
-        
-		<div><p id = "user_name">PulmoCoach</p></div>
-
-		<div>
-            <button id="Tutorial_btn" class="home_btn" routerLink="/menu" (click)="openPdf()">
-                CXR Tutorial
-            </button>
-        </div>
-		<div>
-            <button id="Random_btn" class="home_btn" routerLink="/question" (click)="changeMode('Random Quiz')">
-                Random Quiz
-            </button>
-        </div>
-		<div>
-            <button id="Custom_btn" class="home_btn" routerLink="/question" (click)="changeMode('Custom Quiz')">
-                Custom Quiz
-            </button>
-        </div>
-		<div>
-            <button id="Search_btn" class="home_btn" disabled="disabled">
-                CXR Search
-            </button>
-        </div>
-		<div>
-            <button id="Analytics_btn" class="home_btn" disabled="disabled">
-                Analytics
-            </button>
-        </div>
-		<div>
-            <button id="History_btn" class="home_btn" routerLink="/history">
-                History
-            </button>
-        </div>
-	</div>
+<div class = "d-flex bg-black" >
+    <app-sidebar></app-sidebar>
 
 	<div class = "grid_midline"></div>
     
 	
     <div class = "grid-right">
 		<div id = "about_us">
-			<h2 id = "about_us_h2">About Us</h2>
+			<p id = "about_us_h2" class="h1 display-1">About Us</p>
 			<hr id = "about_us_hr">
             <pre id = "about_us_paragraph">
                 {{AboutUs}}

@@ -1,5 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 /* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
 * {
 	box-sizing: border-box;
 }
@@ -10,4 +11,14 @@ body {
   color: white ;
   background-color: #000000;
   height: 100%;
+}
+
+@font-face {
+  font-family: 'PoiretOne';
+  src: url('./assets/fonts/PoiretOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf');
 }
