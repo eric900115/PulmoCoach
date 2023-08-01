@@ -1,0 +1,79 @@
+<div *ngIf="!sideBarIsOpen && !isMenu" class="arrow" style="position: relative; font-size: 2.3rem;"
+    (click)="sideBarToggle()">
+    <i class="fa-solid fa-bars"></i>
+    Sidebar
+</div>
+
+
+<div *ngIf="sideBarIsOpen" class="d-flex flex-column flex-shrink-0 p-3 pt-2 text-bg-dark"
+    style="width: 280px; height: 100vh; display: block; overflow-y: auto; position: fixed;">
+
+    <div *ngIf="!isMenu" class="mt-1 me-3 mb-4 arrow" style="position: absolute; right: 0; font-size: 2.3rem;"
+        (click)="sideBarToggle()">
+        <i class="fa-solid fa-bars"></i>
+    </div>
+
+    <div style="position: relative; margin-top: 40px;">
+        <a href="/" class="d-flex align-items-center mb-0 me-md-auto text-white text-decoration-none"></a>
+    </div>
+    <div style="display: flex; justify-content: center; align-items: center;">
+        <img src="assets/pulmo_coach_logo.jpg" alt="" height="220vh" class="rounded-circle">
+    </div>
+
+    <a href="#" routerLink="/menu"
+        class="nav-link d-flex align-items-center mb-3 mb-md-0 me-md-auto text-white text-decoration-none">
+        <span class="fs-1 nav-link">PulmoCoach</span>
+    </a>
+    <hr>
+    <ul class="nav nav-pills flex-column mb-auto">
+
+        <li>
+            <a href="#" class="nav-link" routerLink="/menu" (click)="openPdf()">
+
+                <span class="fs-4">CXR Tutorial</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link " routerLink="/question" (click)="changeMode('Custom Quiz')">
+
+                <span class="fs-4">Custom Quiz</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link" routerLink="/question" (click)="changeMode('Random Quiz')">
+
+                <span class="fs-4">Random Quiz</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link " disabled="disabled">
+
+                <span class="fs-4">Analytics</span>
+            </a>
+        </li>
+        <li>
+            <a href="#" class="nav-link " routerLink="/history">
+
+                <span class="fs-4">History</span>
+            </a>
+        </li>
+    </ul>
+
+    <hr>
+
+    <div class="dropdown">
+        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="assets/pulmo_coach_logo.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>GDSC PulmoCoach Group</strong>
+        </a>
+        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+
+            <li><a class="dropdown-item" href="#">Profile</a></li>
+            <li>
+                <hr class="dropdown-divider">
+            </li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+        </ul>
+    </div>
+</div>
