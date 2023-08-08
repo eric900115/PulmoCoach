@@ -1,6 +1,6 @@
 <div *ngIf="!sideBarIsOpen && !isMenu" class="arrow" style="position: relative; font-size: 2.3rem;"
     (click)="sideBarToggle()">
-    <i class="fa-solid fa-bars">Sidebar</i>
+    <i class="fa-solid fa-bars"></i>
 </div>
 
 <div *ngIf="sideBarIsOpen" class="d-flex flex-column flex-shrink-0 p-3 pt-2 bg-black">
@@ -17,8 +17,7 @@
         <img src="assets/pulmo_coach_logo.jpg" alt="" class="w-75 m-auto">
     </div>
 
-    <a href="#" routerLink="/menu"
-        class="nav-link d-flex align-items-center mx-auto text-white text-decoration-none">
+    <a href="#" routerLink="/menu" class="nav-link d-flex align-items-center mx-auto text-white text-decoration-none">
         <p class="fs-2 nav-link my-0">PulmoCoach</p>
     </a>
     <hr class="my-2">
@@ -61,8 +60,7 @@
     <div class="dropdown">
         <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
             data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="assets/pulmo_coach_logo.jpg" alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong>GDSC PulmoCoach Group</strong>
+            <div style="font-size: x-large;">GDSC PulmoCoach Group</div>
         </a>
         <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
 
