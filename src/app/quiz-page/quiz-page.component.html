@@ -1,0 +1,55 @@
+  <!-- <ng-container *ngIf="!isQuizCompleted && isStart"> -->
+<div class="grid-container" style="position: relative;">
+    <div class="grid-left">
+        <img id="photo" src={{this.ImgURL[currentQuestion]}} alt="user_img">
+    </div>
+            
+    <div class="top_btn">
+        <button 
+            type="button" 
+            (click)="prevQuestion()" 
+            [disabled]="(currentQuestion === 0) && (currentSubQuestion === 0)" 
+            class="btn btn-secondary m-2 p-2">
+            Back
+        </button>
+        <button 
+            type="button" 
+
+            (click)="nextQuestion()" 
+            [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
+            class="btn btn-success m-2 p-2">
+            Next
+        </button>
+        <button 
+            type="button" 
+
+            (click)="nextQuestion()" 
+            [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
+            class="btn btn-danger m-2 p-2">
+            End Quiz
+        </button>
+    </div>
+            
+    <div class="Q">{{questionList[currentQuestion][currentSubQuestion][0]}}?
+    <!-- QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion -->
+    </div>
+
+    <div class="hint"> 
+        <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button> 
+        <p [hidden]="hidden_hint" id="hint" style="background:grey; padding: 1%; z-index:9999; position:absolute; border-radius: 0.5em; margin: 1%;"></p>
+                <!-- <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button>  -->
+    </div>
+
+    <div class="answer">
+        <button id="present" (click)="answer('YES');">Present</button>
+        <button id="absent" (click)="answer('NO');" >Absent</button>
+    </div>
+    
+    <div class="process">
+        <p id="ratio">
+            <var id="finished">{{currentQuestion + 1}}</var> 
+            <var id="total">{{questionList.length}}</var>
+        </p> 
+    </div>	
+</div>
+  <!-- </ng-container> -->

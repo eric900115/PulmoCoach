@@ -13,6 +13,7 @@ import { HistoryComponent } from './history/history.component';
 import { ComponentNameComponent } from './component-name/component-name.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RandomQuizComponent } from './random-quiz/random-quiz.component';
+import { QuizPageComponent } from './quiz-page/quiz-page.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { RandomQuizComponent } from './random-quiz/random-quiz.component';
     HistoryComponent,
     ComponentNameComponent,
     SidebarComponent,
-    RandomQuizComponent
+    RandomQuizComponent,
+    QuizPageComponent
   ],
   imports: [
     BrowserModule,
