@@ -6,15 +6,14 @@
         <h1 id = "page_title" class="display-1 text-center">Random Quiz</h1>
         <hr id = "page_hr" class="d-flex align-items-start">
             <div>
-                <pre id = "hint_paragraph" class="fs-6 fs-md-5 text-danger">
+                <pre id = "hint_paragraph" class="fs-6 fs-md-5 fs-lg-4 text-danger">
                     {{ QuizHint }}
                 </pre>
             </div>
 
-            <!-- md -->
-            <div class="d-flex justify-content-around pd-5">
-                <button type="button" class="btn btn-secondary fs-5 fs-lg-4 p-3" routerLink="/menu">Abort Quiz</button>
-                <button type="button" class="btn btn-success fs-5 fs-lg-4 p-3">Go To Quiz</button>
+            <div class="d-flex flex-column flex-md-row justify-content-around pd-5">
+                <button type="button" class="btn btn-secondary fs-6 fs-md-5 fs-lg-4 p-3 m-3" routerLink="/menu">Abort Quiz</button>
+                <button type="button" class="btn btn-success fs-6 fs-md-5 fs-lg-4 p-3 m-3">Go To Quiz</button>
                 <!-- <button id="abort" routerLink="/menu">Abort Quiz</button> -->
                 <!-- <button id="go_to_quiz" (click)="startQuiz()">Go To Quiz</button> -->
             </div>	
