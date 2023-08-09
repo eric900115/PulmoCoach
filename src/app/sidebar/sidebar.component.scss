@@ -65,3 +65,36 @@
 .arrow:hover {
     color: gray;
 }
+
+i {
+    border-radius: 50%;
+    border: 2px solid white;
+    padding: 13px;
+}
+
+i:hover {
+    border-radius: 50%;
+    border: 2px solid black;
+    background-color: rgb(165, 164, 164);
+    padding: 13px;
+}
+
+
+._container {
+    margin: 0;
+    padding: 10%;
+    width: 400%;
+    // border-right: 2px solid white;
+    border-color: rgb(184, 184, 214);
+    border-radius: 3%;
+    // background-color: rgb(55, 57, 101);
+}
+
+img {
+    max-width: 60%;
+    /* Make sure the image doesn't exceed the container's width */
+}
+
+.dropdown {
+    margin-bottom: 5%;
+}
