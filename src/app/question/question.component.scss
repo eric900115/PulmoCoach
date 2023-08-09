@@ -20,10 +20,11 @@ option{
 
 .select_text {
   font-size: 35px;
+  font-family: Inter;
 }
 
 .custom_normal_text {
-  font-family: 'Inter';
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   line-height: 60%;
@@ -85,7 +86,7 @@ option{
   margin-bottom: 10%;
   margin-right: 5%;
   margin-left: 5%;
-  font-size: 1.7rem;
+  // font-size: 1.7rem;
   text-align: left;
   color: red
 }
@@ -139,7 +140,7 @@ option{
 
 h1 {
   font-size: 6em;
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: PoiretOne, cursive;
   text-align: center;
 }
 
@@ -160,12 +161,19 @@ h1 {
 #quiz_h2 {
   margin-top: 5%;
   margin-bottom: 0;
-  font-size: 2em;
-  font-family: 'Edu NSW ACT Foundation', cursive;
+  font-family: PoiretOne, cursive;
 }
 
 #quiz_hr {
   margin: 0;
+}
+
+#origin_paragraph{
+  text-align: middle;
+  font-size: 1.7rem;
+  width:100%;
+  white-space: pre-wrap;
+  margin-inline: auto;
 }
 
 // quiz
@@ -380,7 +388,7 @@ h1 {
 
 // result
 .normal_text {
-  font-family: 'Inter';
+  font-family: Inter;
   font-style: normal;
   font-weight: 400;
   // font-size: 48px;
@@ -406,7 +414,7 @@ h1 {
 }
 
 #custom_home_btn{
-  font-family: 'Poiret One', cursive;
+  font-family: PoiretOne, cursive;
   text-align: top;
   padding:2%;
   // margin-left: 4%; 
@@ -420,7 +428,7 @@ h1 {
 }
 
 #custom_start_btn{
-  font-family: 'Poiret One', cursive;
+  font-family: PoiretOne, cursive;
   text-align: top;
   padding:2%;
   // margin-left: 3%; 
@@ -438,7 +446,7 @@ h1 {
 
 
 #custom_clear_btn{
-  font-family: 'Poiret One', cursive;
+  font-family: PoiretOne, cursive;
   text-align: top;
   padding:2%;
   // margin-left: 4%; 
@@ -452,10 +460,6 @@ h1 {
   box-shadow: 0px 0px 15px rgb(255, 255, 255);
 }
 
-.quiz_type{
-  size: 5rem;
-  font-family: 'Poiret One', cursive;
-}
 
 #result_home_btn:hover{
   box-shadow: 0px 0px 15px rgb(255, 255, 255);

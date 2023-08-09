@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { MenuComponent } from './menu/menu.component';
 import { HistoryComponent } from './history/history.component';
 import { ComponentNameComponent } from './component-name/component-name.component';
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ComponentNameComponent } from './component-name/component-name.componen
     HeaderComponent,
     MenuComponent,
     HistoryComponent,
-    ComponentNameComponent
+    ComponentNameComponent,
+    SidebarComponent
   ],
   imports: [
     BrowserModule,

@@ -1,23 +1,22 @@
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet">
-<div id = "history_1">
-    <div id = "history_2">
-        <div id = "Mode_Btn">
+<div id="history_1">
+    <div id="history_2">
+        <app-sidebar [isMenu]=" false" style="display:block; position:fixed; z-index: 100;"></app-sidebar>
+        <div id="Mode_Btn">
             <div style="display:flex; flex-direction: column; align-items: center;">
-                <img src="../../assets/history/circle.svg" style="width: 90%; padding: 5%;"/>
+                <img src="../../assets/history/circle.svg" style="width: 90%; padding: 5%;" />
                 <p class="normal_text" style="font-size: 2.5em; padding-top: 8%;">User Name</p>
             </div>
             <div style="display:grid; grid-template-columns: auto auto; width: 50%; ">
                 <p class="normal_text">Quiz Type : </p>
                 <button class="normal_text arrow">Random</button>
                 <p class="normal_text">Sorting : </p>
-                <button class="normal_text arrow" >&nbsp;Recent&nbsp;</button>
+                <button class="normal_text arrow">&nbsp;Recent&nbsp;</button>
                 <p class="normal_text">Range : </p>
-                <button class="normal_text arrow" >&nbsp;7 Days&nbsp;</button>
+                <button class="normal_text arrow">&nbsp;7 Days&nbsp;</button>
             </div>
         </div>
-        <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">History</p>
+        <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">
+            History</p>
         <div class="link-top"></div>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
@@ -26,12 +25,13 @@
             <p class="normal_text" style="font-size: 2em;">Result</p>
         </div>
 
-        <div *ngFor="let info of records" style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
+        <div *ngFor="let info of records"
+            style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
             <p class="normal_text" style="font-size: 1.75em;">{{ info[0] }}</p>
             <p class="normal_text" style="font-size: 1.75em;">{{ info[1] }}</p>
             <p class="normal_text" style="font-size: 1.75em;">{{ info[2] }} / {{ info[3] }}</p>
         </div>
-        <button routerLink="/menu" class="normal_text arrow" style="font-size: 2em; height:1.5em; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
+        <button routerLink="/menu" class="normal_text arrow"
+            style="font-size: 2em; height:1.5em; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
     </div>
 </div>
-  

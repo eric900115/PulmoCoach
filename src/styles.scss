@@ -1,13 +1,42 @@
 /* You can add global styles to this file, and also import other style files */
-/* You can add global styles to this file, and also import other style files */
+// @import '~bootstrap/dist/css/bootstrap.min.css';
+@import "../node_modules/bootstrap/scss/bootstrap";
+
+
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+      ( responsive: true ),
+    ),
+  )
+);
+
+@import "bootstrap/scss/utilities/api";
+@import 'bootstrap/scss/bootstrap';
+
+
 * {
 	box-sizing: border-box;
 }
 
+@font-face {
+  font-family: 'PoiretOne';
+  src: url('./assets/fonts/PoiretOne-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('./assets/fonts/Inter-VariableFont_slnt\,wght.ttf');
+}
+
 body {
-  font-size: 16px;
+  font-size: 1rem;
 	line-height: 1.5;
   color: white ;
   background-color: #000000;
   height: 100%;
+  font-family: Inter;
 }
+
