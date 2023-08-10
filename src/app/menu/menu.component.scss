@@ -1,81 +1,14 @@
-.grid-container {
-  display:flex; 
-  flex-direction: row; 
-  background-color:black; 
-  // margin:3%; 
-  // border-color:white; 
-  // border-width:0.1em; 
-  // border-style:solid;
-}
-
-.grid-left {
-  margin-top: 5%;
-  width: 30%;
-  text-align: center;
-}
-
 .grid-right {
   width: 80%;
   text-align: center;
-}
-.grid_midline {
-  padding-block: 10%;
-  width:1px;
-  border-width:0;
-  color:#FFFFFF;
-  background-color:#FFFFFF;
-  margin: 3%;
-}
-
-#user_img {
-  border-radius: 50rem; 
-  max-height:50%;
-  max-width:50%
-}
-
-#user_name {
-  font-size: 0.8rem;
-  text-align: center;
-  margin-bottom: 3%;
-  margin-top: 3%;
-}
-
-@media (min-width: 500px) {
-  #user_name {
-    font-size: 1.5rem;
-    text-align: center;
-    margin-bottom: 3%;
-    margin-top: 3%;
-  }
-}
-
-@media (min-width: 1024px) {
-  #user_name {
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 3%;
-    margin-top: 3%;
-  }
-}
-
-.home_btn {
-  height: 15%;
-  padding-top: 3%;
-  padding-bottom: 3%;
-  width: 60%;
-  margin:4%;
-  border: 1% white solid;
-  border-radius: 50%;
-  background-color: black;
-  text-align: center;
-  color: white;
-  font-size: 100%;
+  justify-content: center;
+  margin-left: 9%;
+  margin-right: 9%;
 }
 
 #about_us {
   padding-left: 10%;
   padding-right: 10%;
-  font-size: 2rem;
   text-align: left;
   margin: 0;
 }
@@ -83,6 +16,7 @@
 #about_us_h2 {
   margin-top: 5%;
   margin-bottom: 0;
+  font-size: 5rem;
   font-family: PoiretOne, cursive;
   // font-size: 5rem;
 }
@@ -90,14 +24,14 @@
 #about_us_hr {
   border-top: 2px solid #ffffff;
   opacity: 1;
-  margin-top: 5%;
+  margin-top: 1%;
 }
 
-#user_name{
+#user_name {
   font-family: PoiretOne, cursive;
 }
 
-#about_us_paragraph{
+#about_us_paragraph {
   text-align: middle;
   // font-size: 1rem;
   width:100%;
@@ -105,6 +39,16 @@
   margin-inline: auto;
 }
 
-button:hover{
+button:hover {
   box-shadow: 0px 0px 15px rgb(255, 255, 255);
+}
+
+._container {
+  margin: 0;
+
+}
+
+.app-sidebar {
+  width: 100%;
+  margin-top: 8%;
 }

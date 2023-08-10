@@ -1,74 +1,74 @@
-<div *ngIf="!sideBarIsOpen && !isMenu" class="arrow" style="position: relative; font-size: 2.3rem;"
-    (click)="sideBarToggle()">
-    <i class="fa-solid fa-bars"></i>
-</div>
-
-<div *ngIf="sideBarIsOpen" class="d-flex flex-column flex-shrink-0 p-3 pt-2 bg-black">
-
-    <div *ngIf="!isMenu" class="mt-1 me-3 mb-4 arrow" style="position: absolute; right: 0; font-size: 2.3rem;"
-        (click)="sideBarToggle()">
+<div class="_container" [ngClass]="{'border': sideBarIsOpen}" [ngClass]="{'background': sideBarIsOpen}"
+    [ngStyle]="sideBarIsOpen ? {'background-color': 'rgb(55, 57, 101)'} : {}">
+    <div style="font-size: 2.3rem; width: 100%;" (click)="sideBarToggle()">
         <i class="fa-solid fa-bars"></i>
     </div>
 
-    <div style="position: relative;">
-        <a href="/" class="d-flex align-items-center mb-0 me-md-auto text-white text-decoration-none"></a>
-    </div>
-    <div style="display: flex; justify-content: center; align-items: center;" class="mt-2">
-        <img src="assets/pulmo_coach_logo.jpg" alt="" class="w-75 m-auto">
-    </div>
+    <div *ngIf="sideBarIsOpen" style="max-width: 100%; margin-top: 1%; tesidext-align: center;">
+        <div style="position: absolute;">
+            <a href="/" class="d-flex align-items-center mb-0 me-md-auto text-white text-decoration-none"></a>
+        </div>
+        <div style="display: flex; justify-content: center; max-width: 100%;">
+            <img src=" assets/pulmo_coach_logo.jpg" alt="">
+        </div>
+        <!-- <div style="display: flex; justify-content: center; align-items: center; max-width: 100%;">
+            <img src="assets/pulmo_coach_logo.jpg" alt="" style="max-width: 100%; max-height: 100%;">
+        </div> -->
 
-    <a href="#" routerLink="/menu" class="nav-link d-flex align-items-center mx-auto text-white text-decoration-none">
-        <p class="fs-2 nav-link my-0">PulmoCoach</p>
-    </a>
-    <hr class="my-2">
-    <ul class="nav nav-pills flex-column mb-auto">
-
-        <li>
-            <a href="#" class="nav-link" routerLink="/menu" (click)="openPdf()">
-
-                <span class="fs-4">CXR Tutorial</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link " routerLink="/question" (click)="changeMode('Custom Quiz')">
-
-                <span class="fs-4">Custom Quiz</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link" routerLink="/question" (click)="changeMode('Random Quiz')">
-
-                <span class="fs-4">Random Quiz</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link " disabled="disabled">
-
-                <span class="fs-4">Analytics</span>
-            </a>
-        </li>
-        <li>
-            <a href="#" class="nav-link " routerLink="/history">
-
-                <span class="fs-4">History</span>
-            </a>
-        </li>
-    </ul>
-
-    <hr>
-
-    <div class="dropdown">
-        <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
-            data-bs-toggle="dropdown" aria-expanded="false">
-            <div style="font-size: x-large;">GDSC PulmoCoach Group</div>
+        <a href="#" routerLink="/menu"
+            class="nav-link d-flex align-items-center mx-auto text-white text-decoration-none">
+            <p class="fs-2 nav-link my-0">PulmoCoach</p>
         </a>
-        <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+        <hr class="my-2">
+        <ul class="nav nav-pills flex-column mb-auto">
 
-            <li><a class="dropdown-item" href="#">Profile</a></li>
             <li>
-                <hr class="dropdown-divider">
+                <a href="#" class="nav-link" routerLink="/menu" (click)="openPdf()">
+
+                    <span class="fs-4">CXR Tutorial</span>
+                </a>
             </li>
-            <li><a class="dropdown-item" href="#">Sign out</a></li>
+            <li>
+                <a href="#" class="nav-link " routerLink="/question" (click)="changeMode('Custom Quiz')">
+
+                    <span class="fs-4">Custom Quiz</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link" routerLink="/question" (click)="changeMode('Random Quiz')">
+
+                    <span class="fs-4">Random Quiz</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link " disabled="disabled">
+
+                    <span class="fs-4">Analytics</span>
+                </a>
+            </li>
+            <li>
+                <a href="#" class="nav-link " routerLink="/history">
+
+                    <span class="fs-4">History</span>
+                </a>
+            </li>
         </ul>
+
+        <hr>
+
+        <div class="dropdown">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+                data-bs-toggle="dropdown" aria-expanded="false">
+                <div style="font-size: large;">GDSC PulmoCoach Group</div>
+            </a>
+            <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
+
+                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li>
+                    <hr class="dropdown-divider">
+                </li>
+                <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+        </div>
     </div>
 </div>
