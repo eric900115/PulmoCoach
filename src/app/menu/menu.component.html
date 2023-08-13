@@ -1,12 +1,13 @@
-<div class="_container">
-	<app-sidebar [isMenu]=" false" style="display:block; position:fixed; z-index: 100;"></app-sidebar>
+<div class = "d-flex bg-black" >
+    <app-sidebar [isMenu]=" false" style="display:block; position:fixed; z-index: 100;"></app-sidebar>
+
 	<div class="grid-right" style=" position:absolute; display:block; z-index:10;">
-		<div id=" about_us">
-			<h1 id = "about_us_h2" class="display-1">About Us</h1>
+		<div id = "about_us">
+			<h1 id = "about_us_h2" class="display-2">About Us</h1>
 			<hr id = "about_us_hr">
             <pre id = "about_us_paragraph" class="fs-6 fs-md-5">
-					{{AboutUs}}
-				</pre>
+                {{AboutUs}}
+            </pre>
 		</div>
 	</div>
 </div>
