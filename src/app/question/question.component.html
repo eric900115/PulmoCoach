@@ -5,8 +5,9 @@
         style="display: block; position: fixed; z-index: 100; left: 2%; top:5%;"></app-sidebar>
       <!-- normal screen -->
 
-      <ng-container *ngIf="isCustom && !isCustomMenuFinished" class="d-none d-md-block">
-        <div class="custom_menu">
+      <!-- md -->
+      <ng-container *ngIf="isCustom && !isCustomMenuFinished">
+        <div class="custom_menu" class="d-none d-md-block">
           <h1 style="text-align: center;">Custom Quiz</h1>
           <div
             style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin-inline: auto; margin-top: 1%;margin-bottom: 2%;">
@@ -75,9 +76,9 @@
         </div>
       </ng-container>
 
-      <!-- small screen -->
-      <!-- <ng-container *ngIf="isCustom && !isCustomMenuFinished">
-        <div class="custom_menu">
+      <!-- sm -->
+      <ng-container *ngIf="isCustom && !isCustomMenuFinished">
+        <div class="custom_menu" class="d-block d-md-none">
           <h1 style="text-align: center; font-size: xx-large;">Custom Quiz</h1>
           <div style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin: 1% auto 2%;"></div>
 
@@ -125,7 +126,7 @@
               style="font-size: 1.3em; margin-left: 3%;">Start</button>
           </div>
         </div>
-      </ng-container> -->
+      </ng-container>
 
 
 
