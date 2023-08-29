@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HistoryComponent {
 
-  dbUrl: String = 'http://127.0.0.1:5000/';
+  dbUrl: String = 'https://is202.cs.nthu.edu.tw/app/';
   uid: string = 'eric20607';
 
   records: any = [];

@@ -2,14 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { interval } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
 import { NONE_TYPE } from '@angular/compiler';
-//import { QuestionService } from './../service/question.service';
 
 @Component({
-  selector: 'app-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.scss'],
+  selector: 'app-quiz-page',
+  templateUrl: './quiz-page.component.html',
+  styleUrls: ['./quiz-page.component.scss']
 })
-export class QuestionComponent implements OnInit {
+export class QuizPageComponent {
 
   public name: string = '';
   public questionList: any = [];
@@ -33,7 +32,7 @@ export class QuestionComponent implements OnInit {
   isCustomMenuFinished: boolean = false;
 
   mode: String = '';
-  dbUrl: String = 'https://is202.cs.nthu.edu.tw/app/';
+  dbUrl: String = 'http://127.0.0.1:5000/';
   questionNum: number = 0;
 
   uid: string = 'eric20607';
@@ -55,59 +54,32 @@ export class QuestionComponent implements OnInit {
     'Both'
   ];
 
-  // Symptom = [
-  //   'Aortic enlargement',
-  //   'Atelectasis',
-  //   'Calcification',
-  //   'Cardiomegaly',
-  //   'Clavicle fracture',
-  //   'Consolidation',
-  //   'Edema',
-  //   'Emphysema',
-  //   'Enlarged PA',
-  //   'ILD',
-  //   'Infiltration', 
-  //   'Lung Opacity',
-  //   'Lung cavity',
-  //   'Lung cyst',
-  //   'Mediastinal shift',
-  //   'Nodule/Mass',
-  //   'Pleural effusion',
-  //   'Pleural thickening',
-  //   'Pneumothorax',
-  //   'Pulmonary fibrosis',
-  //   'Rib fracture',
-  //   'COPD',
-  //   'Lung tumor',
-  //   'Pneumonia',
-  //   'Tuberculosis'
-  // ];
   Symptom = [
-    { value: 'Aortic enlargement', selected: false },
-    { value: 'Atelectasis', selected: false },
-    { value: 'Calcification', selected: false },
-    { value: 'Cardiomegaly', selected: false },
-    { value: 'Clavicle fracture', selected: false },
-    { value: 'Consolidation', selected: false },
-    { value: 'Edema', selected: false },
-    { value: 'Emphysema', selected: false },
-    { value: 'Enlarged PA', selected: false },
-    { value: 'ILD', selected: false },
-    { value: 'Infiltration', selected: false },
-    { value: 'Lung Opacity', selected: false },
-    { value: 'Lung cavity', selected: false },
-    { value: 'Lung cyst', selected: false },
-    { value: 'Mediastinal shift', selected: false },
-    { value: 'Nodule/Mass', selected: false },
-    { value: 'Pleural effusion', selected: false },
-    { value: 'Pleural thickening', selected: false },
-    { value: 'Pneumothorax', selected: false },
-    { value: 'Pulmonary fibrosis', selected: false },
-    { value: 'Rib fracture', selected: false },
-    { value: 'COPD', selected: false },
-    { value: 'Lung tumor', selected: false },
-    { value: 'Pneumonia', selected: false },
-    { value: 'Tuberculosis', selected: false },
+    'Aortic enlargement',
+    'Atelectasis',
+    'Calcification',
+    'Cardiomegaly',
+    'Clavicle fracture',
+    'Consolidation',
+    'Edema',
+    'Emphysema',
+    'Enlarged PA',
+    'ILD',
+    'Infiltration', 
+    'Lung Opacity',
+    'Lung cavity',
+    'Lung cyst',
+    'Mediastinal shift',
+    'Nodule/Mass',
+    'Pleural effusion',
+    'Pleural thickening',
+    'Pneumothorax',
+    'Pulmonary fibrosis',
+    'Rib fracture',
+    'COPD',
+    'Lung tumor',
+    'Pneumonia',
+    'Tuberculosis'
   ];
 
   // 0327 add
@@ -122,7 +94,7 @@ export class QuestionComponent implements OnInit {
     ['Emphysema', 'Emphysema: Identify hyperlucent lung fields, decreased vascular markings, and flattened diaphragms. Observe for bullae, areas of focal parenchymal destruction, or pneumothorax. Evaluate for underlying COPD.'],
     ['Enlarged PA', 'Enlarged PA: Look for increased pulmonary artery diameter, abrupt tapering or "pruning" of peripheral vessels. Consider causes like pulmonary hypertension, pulmonary embolism, or vasculitis.'],
     ['ILD', 'ILD (Interstitial Lung Disease): Identify reticular, nodular, or ground-glass opacities, and distribution (central or peripheral). Assess for honeycombing or traction bronchiectasis. Consider various etiologies like idiopathic pulmonary fibrosis or connective tissue diseases.'],
-    ['Infiltration', 'Infiltration: Look for ill-defined lung opacities, which may represent infection, inflammation, or edema. Consider bronchopneumonia, atypical pneumonia, or non-infectious causes like aspiration or pulmonary hemorrhage.'],
+    ['Infiltration', 'Infiltration: Look for ill-defined lung opacities, which may represent infection, inflammation, or edema. Consider bronchopneumonia, atypical pneumonia, or non-infectious causes like aspiration or pulmonary hemorrhage.' ],
     ['Lung Opacity', 'Lung Opacity: Assess for focal or diffuse opacities, which may represent consolidation, mass, or atelectasis. Determine the underlying cause, such as infection, tumor, or post-obstructive collapse.'],
     ['Lung cavity', 'Lung Cavity: Identify a gas-filled space within a pulmonary consolidation, mass, or nodule. Evaluate for underlying causes like abscess, necrotizing pneumonia, or cavitating malignancy.'],
     ['Lung cyst', 'Lung Cyst: Look for well-defined, thin-walled, air-filled spaces in the lung parenchyma. Consider causes like emphysema, Langerhans cell histiocytosis, or lymphangioleiomyomatosis.'],
@@ -136,7 +108,7 @@ export class QuestionComponent implements OnInit {
     ['COPD', 'COPD (Chronic Obstructive Pulmonary Disease): Assess for hyperinflation, flattened diaphragms, and increased retrosternal airspace. Look for bullae or emphysematous changes. Evaluate for acute exacerbation or comorbidities.'],
     ['Lung tumor', 'Lung Tumor: Examine for focal lung opacity with irregular or speculated margins. Assess size, growth, and associated lymphadenopathy or metastases. Consider biopsy or follow-up imaging.'],
     ['Pneumonia', 'Pneumonia: Identify areas of consolidation, air bronchograms, or interstitial opacities. Determine lobar or bronchopneumonia patterns. Evaluate for underlying infection, aspiration, or atypical pneumonia.'],
-    ['Tuberculosis', 'Tuberculosis: Look for upper lobe consolidation, cavitation, or calcification. Assess for miliary pattern, pleural effusion, or lymphadenopathy. Consider primary or reactivation tuberculosis and manage accordingly.']
+    ['Tuberculosis','Tuberculosis: Look for upper lobe consolidation, cavitation, or calcification. Assess for miliary pattern, pleural effusion, or lymphadenopathy. Consider primary or reactivation tuberculosis and manage accordingly.']
   ]);
   //   ['key3', 'value3'],
   //   ['key1', 'value1'],
@@ -159,67 +131,66 @@ export class QuestionComponent implements OnInit {
   //   ['key3', 'value3']
   // 0327 add
 
-  constructor(private http: HttpClient) {
+  constructor(private http: HttpClient){
   }
 
-  async ngOnInit() {
+  async ngOnInit(){
     this.name = localStorage.getItem('name')!;
     this.mode = localStorage.getItem("mode") || "";
     this.questionNum = 2;
-    this.customGender = 'Select';
 
     const infos = JSON.parse(localStorage.getItem('infos') || '');
     const idNumL = infos['id_numL'];
     this.uid = idNumL;
 
     console.log(this.uid);
-
-    if (this.mode == 'Random Quiz') {
+    
+    if(this.mode == 'Random Quiz'){
       this.getRandomQuestions();
       this.isCustom = false;
     }
-    else if (this.mode == 'Custom Quiz') {
+    else if(this.mode == 'Custom Quiz'){
       this.isCustom = true;
     }
   }
 
-  customMenuDone() {
+  customMenuDone(){
     this.isCustomMenuFinished = true;
     this.getCustomQuestions();
   }
 
-  async getRandomQuestions() {
+  async getRandomQuestions(){
     const data = await this.getRandomData();
     this.getQuestions(data);
   }
 
-  async getCustomQuestions() {
+  async getCustomQuestions(){
     const data = await this.getCustomData();
     this.getQuestions(data);
   }
 
-  async getRandomData() {//////
-    const response = await fetch(this.dbUrl + '/item/' + this.questionNum.toString());
+  async getRandomData(){//////
+    const response = await fetch(this.dbUrl + '/item/'  + this.questionNum.toString());
     const data = await response.json();
     console.log(data);
     return data;
   }
 
-  async getCustomData() {
+  async getCustomData(){
     let url = this.dbUrl + 'custom';
 
     const requestData = {
-      'symptom': this.customSymptom,
-      'gender': this.customGender,
-      'questionNum': this.customQuestionNum,
-      'abnormalityRate': this.customAbnomarlityRate
+      'symptom' : this.customSymptom,
+      'gender' : this.customGender,
+      'questionNum' : this.customQuestionNum,
+      'abnormalityRate' : this.customAbnomarlityRate
     }
 
     const config = {
       method: 'POST',
       headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Content-Type': 'application/json',
       },
       body: JSON.stringify(requestData)
     }
@@ -230,23 +201,23 @@ export class QuestionComponent implements OnInit {
     return data;
   }
 
-  getQuestions(Data: Object) {
+  getQuestions(Data: Object){
 
-    if (!this.isCustom) {
+    if(!this.isCustom){
       for (const [id, data] of Object.entries(Data)) {
 
         const question: string[][] = [];
         //const answer: any = {};
         let answer: Record<string, any> = {};
-
-        for (const [symptom, v] of Object.entries(data['symptom'])) {
-
+        
+        for(const [symptom, v] of Object.entries(data['symptom'])){
+          
           question.push([symptom, 'YES', 'NO']);
 
-          if (v == '') {
+          if(v == ''){
             answer[symptom] = ['NO', 'Not Answered'];
           }
-          else {
+          else{
             answer[symptom] = ['YES', 'Not Answered'];
           }
         }
@@ -257,18 +228,18 @@ export class QuestionComponent implements OnInit {
         this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
       }
     }
-    else {
-      let i: number = 1;
+    else{
+      let i : number = 1;
       for (const [id, data] of Object.entries(Data)) {
 
         const question: string[][] = [];
         //const answer: any = {};
         let answer: Record<string, any> = {};
         const str: string = String(i);
-        if (data['symptom'][this.customSymptom] == '') {
+        if(data['symptom'][this.customSymptom] == ''){
           answer[str] = ['NO', 'Not Answered']
         }
-        else {
+        else{
           answer[str] = ['YES', 'Not Answered']
         }
 
@@ -306,103 +277,103 @@ export class QuestionComponent implements OnInit {
     console.log(this.ImgLabelURL)*/
   }
 
-  hintBtn() {
+  hintBtn(){
     this.isHint = !this.isHint;
   }
 
-  startQuiz() {
+  startQuiz(){
     this.isStart = true;
   }
 
-  isQuizFinished() {
-    return (this.currentQuestion == this.questionList.length - 1) &&
-      (this.currentSubQuestion == this.questionList[this.questionList.length - 1].length - 1);
+  isQuizFinished(){
+    return (this.currentQuestion == this.questionList.length - 1) && 
+          (this.currentSubQuestion == this.questionList[this.questionList.length - 1].length - 1);
   }
 
   prevQuestion() {
     // go to previous question
-    if (this.currentSubQuestion == 0) {
+    if(this.currentSubQuestion == 0){
       this.currentSubQuestion = this.questionList[this.currentQuestion - 1].length - 1;
       this.currentQuestion -= 1;
     }
-    else {
+    else{
       this.currentSubQuestion--;
     }
   }
 
-  nextQuestion() {
+  nextQuestion(){
     // go to next question
-    if (this.currentSubQuestion != this.questionList[this.currentQuestion].length - 1) {
+    if(this.currentSubQuestion != this.questionList[this.currentQuestion].length - 1){
       this.currentSubQuestion++;
     }
-    else {
+    else{
       this.currentQuestion++;
       this.currentSubQuestion = 0;
     }
   }
 
-  recordAnswer(option: string) {
+  recordAnswer(option: string){
     // this.AnswerList[this.currentQuestion][symptom][0] is the correct answer of problem
     // this.AnswerList[this.currentQuestion][symptom][1] is the answer entered by user
     const symptom: string = this.questionList[this.currentQuestion][this.currentSubQuestion][0];
-    if (this.isCustom) {
-      this.AnswerList[this.currentQuestion][(this.currentQuestion + 1).toString()][1] = option;
+    if(this.isCustom){
+      this.AnswerList[this.currentQuestion][(this.currentQuestion+1).toString()][1] = option;
     }
-    else {
+    else{
       this.AnswerList[this.currentQuestion][symptom][1] = option;
     }
   }
 
-  calculateResult() {
-    for (let answer of this.AnswerList) {
-      for (let key in answer) {
+  calculateResult(){
+    for(let answer of this.AnswerList){
+      for(let key in answer){
         // your answer == correct answer
-        if (answer[key][0] === answer[key][1]) {
+        if(answer[key][0] === answer[key][1]){
           this.correctAnswer++;
         }
-        else {
+        else{
           this.incorrectAnswer++;
         }
       }
     }
   }
 
-  async postResult() {
+  async postResult(){
     let url = this.dbUrl + 'result/' + this.uid;
     let options = {
       observe: 'response' as 'response'
     }
 
-    var currentdate = new Date();
+    var currentdate = new Date(); 
     var datetime = currentdate.getDate() + "/"
-      + (currentdate.getMonth() + 1) + "/"
-      + currentdate.getFullYear() + " "
-      + currentdate.getHours() + ":"
-      + currentdate.getMinutes() + ":"
-      + currentdate.getSeconds();
-
+                  + (currentdate.getMonth()+1)  + "/" 
+                  + currentdate.getFullYear() + " "  
+                  + currentdate.getHours() + ":"  
+                  + currentdate.getMinutes() + ":" 
+                  + currentdate.getSeconds();
+    
     const result = [datetime, this.mode, this.correctAnswer, this.incorrectAnswer + this.correctAnswer];
 
-    this.http.post<any>(url, result, options).subscribe(res => {
+    this.http.post<any>(url, result, options).subscribe(res =>{
       //console.log(res);
     });
   }
 
-  endQuiz() {
+  endQuiz(){
     this.isQuizCompleted = true;
     this.calculateResult();
     this.postResult();
   }
 
   answer(option: string) {
-
+    
     this.recordAnswer(option);
 
-    if (this.isQuizFinished()) {
+    if(this.isQuizFinished()){
       // Quiz Finished
       this.endQuiz();
     }
-    else {
+    else{
       // Go to the next question
       this.nextQuestion();
       this.getProgressPercent();
@@ -413,8 +384,8 @@ export class QuestionComponent implements OnInit {
   }
 
   getProgressPercent() {
-    this.progress = ((((this.currentQuestion) * this.questionList[0].length + this.currentSubQuestion) /
-      (this.questionList.length * this.questionList[0].length)) * 100)
+    this.progress = ((((this.currentQuestion) * this.questionList[0].length + this.currentSubQuestion) / 
+      (this.questionList.length * this.questionList[0].length))* 100)
       .toFixed(0)
       .toString();
 
@@ -423,31 +394,31 @@ export class QuestionComponent implements OnInit {
 
   hint_showed = 0;
 
-  show_hint() {
+  show_hint(){
     this.hidden_hint = !this.hidden_hint;
-    if (!this.isCustom) {
-      this.hint_showed = this.hint_showed + 1;
-      if (this.hint_showed % 2 === 1) {
-        var ele = document.getElementById("hint") as HTMLElement;;
+    if(!this.isCustom){
+      this.hint_showed = this.hint_showed+1;
+      if(this.hint_showed%2 === 1){
+        var ele = document.getElementById("hint")as HTMLElement;;
         console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
-        const p = (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0])) as string;
+        const p =  (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0]))as string;
         console.log("this is p");
-        console.log(typeof (p));
+        console.log(typeof(p));
         ele.textContent = p;
       }
-      else {
-        var ele = document.getElementById("hint") as HTMLElement;;
+      else{
+        var ele = document.getElementById("hint")as HTMLElement;;
         ele.textContent = "";
       }
     }
-    else {
+    else{
       this.isHint = !this.isHint;
-      if (this.isHint) {
-        var ele = document.getElementById("hint") as HTMLElement;;
+      if(this.isHint){
+        var ele = document.getElementById("hint")as HTMLElement;;
         ele.textContent = 'CP angle blunting is a useful sign for identifying Pleural Effusions.';
       }
-      else {
-        var ele = document.getElementById("hint") as HTMLElement;;
+      else{
+        var ele = document.getElementById("hint")as HTMLElement;;
         ele.textContent = '';
       }
     }
