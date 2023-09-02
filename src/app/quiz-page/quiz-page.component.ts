@@ -110,26 +110,6 @@ export class QuizPageComponent {
     ['Pneumonia', 'Pneumonia: Identify areas of consolidation, air bronchograms, or interstitial opacities. Determine lobar or bronchopneumonia patterns. Evaluate for underlying infection, aspiration, or atypical pneumonia.'],
     ['Tuberculosis','Tuberculosis: Look for upper lobe consolidation, cavitation, or calcification. Assess for miliary pattern, pleural effusion, or lymphadenopathy. Consider primary or reactivation tuberculosis and manage accordingly.']
   ]);
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3'],
-  //   ['key1', 'value1'],
-  //   ['key2', 'value2'],
-  //   ['key3', 'value3']
-  // 0327 add
 
   constructor(private http: HttpClient){
   }
@@ -152,11 +132,6 @@ export class QuizPageComponent {
     else if(this.mode == 'Custom Quiz'){
       this.isCustom = true;
     }
-  }
-
-  customMenuDone(){
-    this.isCustomMenuFinished = true;
-    this.getCustomQuestions();
   }
 
   async getRandomQuestions(){
@@ -249,32 +224,7 @@ export class QuizPageComponent {
         this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
         i += 1;
       }
-      /*this.questionList = [,
-                        [['Do you see the presence of Pleural Effusion in the CXR?']],
-                        [['Do you see the presence of Pleural Effusion in the CXR?']],
-                        [['Do you see the presence of Pleural Effusion in the CXR?']],
-                        [['Do you see the presence of Pleural Effusion in the CXR?']]];
-      this.AnswerList = [{'1' : ['YES', 'Not Answered']},
-                          {'2' : ['YES', 'Not Answered']},
-                          {'3' : ['No', 'Not Answered']},
-                          {'4' : ['YES', 'Not Answered']},
-                          {'5' : ['No', 'Not Answered']}];
-      this.ImgURL = ['assets/img/3b5957a38160102563037a3769a383be.png',
-                    'assets/img/6cbf4295b5b72bc01ef6fd171ef7733e.png',
-                    'assets/img/5ef0d0b605f39b09df42d293e87971e3.png',
-                    'assets/img/851111c0d1373209b9cff31baf15dbe2.png',
-                    'assets/img/02425334e92510da663eb913ad0632ea.png']
-      this.ImgLabelURL = ['assets/img/3b5957a38160102563037a3769a383be_label.png',
-                    'assets/img/6cbf4295b5b72bc01ef6fd171ef7733e_label.png',
-                    'assets/img/5ef0d0b605f39b09df42d293e87971e3_label.png',
-                    'assets/img/851111c0d1373209b9cff31baf15dbe2_label.png',
-                    'assets/img/02425334e92510da663eb913ad0632ea_label.png']
-      */
     }
-    /*console.log(this.questionList)
-    console.log(this.AnswerList)
-    console.log(this.ImgURL)
-    console.log(this.ImgLabelURL)*/
   }
 
   hintBtn(){

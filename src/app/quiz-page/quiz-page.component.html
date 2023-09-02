@@ -15,7 +15,6 @@
         </button>
         <button 
             type="button" 
-
             (click)="nextQuestion()" 
             [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
             class="btn btn-success m-2 p-2">
@@ -23,7 +22,6 @@
         </button>
         <button 
             type="button" 
-
             (click)="nextQuestion()" 
             [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
             class="btn btn-danger m-2 p-2">
@@ -36,14 +34,14 @@
     </div>
 
     <div class="hint"> 
-        <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button> 
+        <button (click) = "show_hint()" class="btn btn-outline-primary border-2 m-2 p-2">Hint</button> 
         <p [hidden]="hidden_hint" id="hint" style="background:grey; padding: 1%; z-index:9999; position:absolute; border-radius: 0.5em; margin: 1%;"></p>
                 <!-- <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button>  -->
     </div>
 
-    <div class="answer">
-        <button id="present" (click)="answer('YES');">Present</button>
-        <button id="absent" (click)="answer('NO');" >Absent</button>
+    <div class="answer d-flex flex-row justify-content-around">
+        <button class="btn btn-outline-light border-2 px-4 btn-lg" id="present" (click)="answer('YES');">Present</button>
+        <button class="btn btn-outline-light border-2 px-4 btn-lg" id="absent" (click)="answer('NO');" >Absent</button>
     </div>
     
     <div class="process">
