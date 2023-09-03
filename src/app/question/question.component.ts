@@ -15,6 +15,7 @@ export class QuestionComponent implements OnInit {
   public questionList: any = [];
   public AnswerList: Record<string, any>[] = [];
   public ImgURL: any = [];
+  public image_data: any = [];
   public ImgLabelURL: any = [];
   public currentQuestion: number = 0;
   public currentSubQuestion: number = 0;
@@ -45,8 +46,8 @@ export class QuestionComponent implements OnInit {
   customQuestionNum: number;
   customGender: string;
 
-  firebaseStorage: string = 'https://storage.googleapis.com/pulmocoach-a3593.appspot.com/'
-  imgDbURL: string = this.firebaseStorage + 'test/';
+  firebaseStorage: string = 'https://is202.cs.nthu.edu.tw/'
+  imgDbURL: string = 'https://is202.cs.nthu.edu.tw/test/';
   imgLabelDbURL: string = this.firebaseStorage + 'test_label/';
 
   Gender = [
@@ -165,13 +166,12 @@ export class QuestionComponent implements OnInit {
   async ngOnInit() {
     this.name = localStorage.getItem('name')!;
     this.mode = localStorage.getItem("mode") || "";
-    this.questionNum = 2;
-    this.customGender = 'Select';
-
+    this.questionNum = 1;
+    console.log(this.name);
     const infos = JSON.parse(localStorage.getItem('infos') || '');
     const idNumL = infos['id_numL'];
     this.uid = idNumL;
-
+    console.log(infos);
     console.log(this.uid);
 
     if (this.mode == 'Random Quiz') {
@@ -198,8 +198,8 @@ export class QuestionComponent implements OnInit {
     this.getQuestions(data);
   }
 
-  async getRandomData() {//////
-    const response = await fetch(this.dbUrl + '/item/' + this.questionNum.toString());
+  async getRandomData(){//////
+    const response = await fetch(this.dbUrl + 'item/'  + this.questionNum.toString());
     const data = await response.json();
     console.log(data);
     return data;
@@ -232,78 +232,20 @@ export class QuestionComponent implements OnInit {
 
   getQuestions(Data: Object) {
 
-    if (!this.isCustom) {
+      console.log(Data);
       for (const [id, data] of Object.entries(Data)) {
-
-        const question: string[][] = [];
-        //const answer: any = {};
-        let answer: Record<string, any> = {};
-
-        for (const [symptom, v] of Object.entries(data['symptom'])) {
-
-          question.push([symptom, 'YES', 'NO']);
-
-          if (v == '') {
-            answer[symptom] = ['NO', 'Not Answered'];
-          }
-          else {
-            answer[symptom] = ['YES', 'Not Answered'];
-          }
-        }
-
-        this.questionList.push(question);
-        this.AnswerList.push(answer);
-        this.ImgURL.push(this.imgDbURL + id + '.png');
-        this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
+        console.log(id);
+        console.log(data);
+        //this.image_data.push(data.image_data);
+        this.ImgURL.push(this.imgDbURL + data.name + ".png")
+        this.questionList.push(data.question);
+        this.AnswerList.push(data.answer);
       }
-    }
-    else {
-      let i: number = 1;
-      for (const [id, data] of Object.entries(Data)) {
-
-        const question: string[][] = [];
-        //const answer: any = {};
-        let answer: Record<string, any> = {};
-        const str: string = String(i);
-        if (data['symptom'][this.customSymptom] == '') {
-          answer[str] = ['NO', 'Not Answered']
-        }
-        else {
-          answer[str] = ['YES', 'Not Answered']
-        }
-
-        this.questionList.push([['Do you see the presence of ' + this.customSymptom + 'in the CXR?']]);
-        this.AnswerList.push(answer);
-        this.ImgURL.push(this.imgDbURL + id + '.png');
-        this.ImgLabelURL.push(this.imgLabelDbURL + id + '.png');
-        i += 1;
-      }
-      /*this.questionList = [,
-                        [['Do you see the presence of Pleural Effusion in the CXR?']],
-                        [['Do you see the presence of Pleural Effusion in the CXR?']],
-                        [['Do you see the presence of Pleural Effusion in the CXR?']],
-                        [['Do you see the presence of Pleural Effusion in the CXR?']]];
-      this.AnswerList = [{'1' : ['YES', 'Not Answered']},
-                          {'2' : ['YES', 'Not Answered']},
-                          {'3' : ['No', 'Not Answered']},
-                          {'4' : ['YES', 'Not Answered']},
-                          {'5' : ['No', 'Not Answered']}];
-      this.ImgURL = ['assets/img/3b5957a38160102563037a3769a383be.png',
-                    'assets/img/6cbf4295b5b72bc01ef6fd171ef7733e.png',
-                    'assets/img/5ef0d0b605f39b09df42d293e87971e3.png',
-                    'assets/img/851111c0d1373209b9cff31baf15dbe2.png',
-                    'assets/img/02425334e92510da663eb913ad0632ea.png']
-      this.ImgLabelURL = ['assets/img/3b5957a38160102563037a3769a383be_label.png',
-                    'assets/img/6cbf4295b5b72bc01ef6fd171ef7733e_label.png',
-                    'assets/img/5ef0d0b605f39b09df42d293e87971e3_label.png',
-                    'assets/img/851111c0d1373209b9cff31baf15dbe2_label.png',
-                    'assets/img/02425334e92510da663eb913ad0632ea_label.png']
-      */
-    }
-    /*console.log(this.questionList)
-    console.log(this.AnswerList)
+    //console.log(this.questionList)
+    //console.log(this.AnswerList)
     console.log(this.ImgURL)
-    console.log(this.ImgLabelURL)*/
+    //console.log(this.ImgLabelURL)
+    
   }
 
   hintBtn() {
@@ -373,14 +315,14 @@ export class QuestionComponent implements OnInit {
       observe: 'response' as 'response'
     }
 
-    var currentdate = new Date();
-    var datetime = currentdate.getDate() + "/"
-      + (currentdate.getMonth() + 1) + "/"
-      + currentdate.getFullYear() + " "
-      + currentdate.getHours() + ":"
-      + currentdate.getMinutes() + ":"
-      + currentdate.getSeconds();
-
+    var currentdate = new Date(); 
+    var datetime = currentdate.getFullYear() + "/"
+                  + (currentdate.getMonth()+1)  + "/" 
+                  + currentdate.getDate()  + " "  
+                  + currentdate.getHours() + ":"  
+                  + currentdate.getMinutes() + ":" 
+                  + currentdate.getSeconds();
+    
     const result = [datetime, this.mode, this.correctAnswer, this.incorrectAnswer + this.correctAnswer];
 
     this.http.post<any>(url, result, options).subscribe(res => {
