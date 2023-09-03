@@ -1,5 +1,5 @@
 <div class="bar_container" [ngClass]="{'border': sideBarIsOpen}" [ngClass]="{'background': sideBarIsOpen}"
-    [ngStyle]="sideBarIsOpen ? {'background-color': 'rgb(0, 0, 0)', 'border-right': '2px solid rgb(165, 164, 164)', 'overflow-y': 'scroll' } : {}">
+    [ngStyle]="sideBarIsOpen ? {'background-color': 'rgb(0, 0, 0)', 'border-right': '2px solid rgb(165, 164, 164)', 'overflow-y': 'scroll' } : {'height': '20%'}">
 
     <!-- icon -->
     <div style="width: 10%; position: sticky;" class="p-3" (click)="sideBarToggle()">

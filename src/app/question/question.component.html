@@ -11,7 +11,7 @@
           <div
             style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin-inline: auto; margin-top: 1%;margin-bottom: 2%;">
           </div>
-          <div style="margin-left: 3%;">
+          <div style="margin-left: 7%;">
 
             <div class="select_text">
               Abnomarlity
@@ -82,7 +82,7 @@
           <div
             style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin-inline: auto; margin-top: 1%;margin-bottom: 2%;">
           </div>
-          <div style="margin-left: 3%;">
+          <div style="margin-left: 8%;">
 
             <div class="select_text">
               Abnomarlity
@@ -152,7 +152,7 @@
           <h1 style="text-align: center; font-size: xx-large;">Custom Quiz</h1>
           <div style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin: 1% auto 2%;"></div>
 
-          <div style="margin-left: 3%;">
+          <div style="margin-left: 12%;">
             <div class="select_text" style="font-size: xx-large;">Abnormality</div>
             <div class="checkbox-columns">
               <label *ngFor="let c of Symptom" class="checkbox-label"
@@ -164,7 +164,7 @@
             </div>
           </div>
 
-          <div class="mb-3" style="display: flex; align-items: center;">
+          <div class="mb-3" style="display: flex; align-items: center; margin-left: 3%;">
             <label for="exampleFormControlInput1" class="form-label"
               style="margin-top: 3%; margin-left: 3%; font-size: large;" [(ngModel)]="customAbnomarlityRate">Abnormality
               Rate(%)</label>
@@ -172,14 +172,14 @@
               style="margin-top: 3%; width: 40%; margin-left: 3%;">
           </div>
 
-          <div class="mb-3" style="display: flex; align-items: center;">
+          <div class="mb-3" style="display: flex; align-items: center; margin-left: 3%;">
             <label for="exampleFormControlInput2" class="form-label" style="margin-left: 3%; font-size: large;"
               [(ngModel)]="customQuestionNum">Number of Questions</label>
             <input min="1" max="15" type="number" class="form-control" id="exampleFormControlInput2" placeholder="1-15"
               style="width: 40%; margin-left: 3%;">
           </div>
 
-          <div style="margin-left: 3%;">
+          <div style="margin-left: 5.5%;">
             <span class="select_text" style="font-size: large;margin-right:5%;">Gender</span>
             <select [(ngModel)]="customGender" class="custom_normal_text arrow custom-select">
               <option value="Select" disabled selected>Select</option>
