@@ -1,13 +1,12 @@
 <div>
   <div>
     <div>
-      <app-sidebar [isMenu]="false"
-        style="display: block; position: fixed; z-index: 100; left: 2%; top:5%;"></app-sidebar>
+      <app-sidebar [isMenu]="false" style="display: block; position: fixed; z-index: 100; top:5%;"></app-sidebar>
       <!-- normal screen -->
 
       <!-- >lg -->
       <ng-container *ngIf="isCustom && !isCustomMenuFinished">
-        <div class="custom_menu" class="d-none d-lg-block">
+        <div class="custom_menu" class="d-none d-lg-block" style="z-index: 1000;">
           <h1 style="text-align: center;">Custom Quiz</h1>
           <div
             style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin-inline: auto; margin-top: 1%;margin-bottom: 2%;">
