@@ -127,36 +127,8 @@
         </div>
       </ng-container>
 
-
-
-
-
-
       <ng-container *ngIf="(!isCustom && !isStart) || (isCustom && isCustomMenuFinished && !isStart)">
-        <div class="ready-grid-container">
-          <div class="ready-grid-left">
-            <div><img id="user_img" src="assets/pulmo_coach_logo.jpg" alt="user_img"></div>
-            <div>
-              <p id="user_name">PulmoCoach</p>
-            </div>
-          </div>
-          <div class="ready-grid_midline"></div>
-          <div class="quiz">
-            <p id="quiz_h2" class="h1 display-1"><var>{{this.mode}}</var></p>
-            <!-- Note: QUIZTYPE 要換成 Random 或 Custom -->
-            <hr id="quiz_hr">
-          </div>
-
-          <div class="quiz_warning">
-            <p class="origin_paragraph h5">Since there are not enough CXRs that meet the requirement of the custom
-              selection, the remaining questions will be replaced with normal CXRs.</p>
-            <!-- Note: warning 在特殊條件下才顯示（題數不夠） -->
-          </div>
-          <div class="quiz_btn">
-            <button id="abort" routerLink="/menu">Abort Quiz</button>
-            <button id="go_to_quiz" (click)="startQuiz()">Go To Quiz</button>
-          </div>
-        </div>
+        <app-random-quiz (RQstart)="startQuiz()"></app-random-quiz>
       </ng-container>
 
       <ng-container *ngIf="!isQuizCompleted && isStart">
