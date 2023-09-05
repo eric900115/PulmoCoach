@@ -371,7 +371,7 @@ export class QuestionComponent implements OnInit {
     if (!this.isCustom) {
       this.hint_showed = this.hint_showed + 1;
       if (this.hint_showed % 2 === 1) {
-        var ele = document.getElementById("hint") as HTMLElement;;
+        var ele = document.getElementById("hint") as HTMLElement;
         console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
         const p = (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0])) as string;
         console.log("this is p");
@@ -380,7 +380,7 @@ export class QuestionComponent implements OnInit {
       }
       else {
         var ele = document.getElementById("hint") as HTMLElement;;
-        ele.textContent = "";
+        ele.textContent = '';
       }
     }
     else {

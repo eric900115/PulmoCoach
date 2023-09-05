@@ -35,7 +35,7 @@
 
     <div class="hint"> 
         <button (click) = "show_hint()" class="btn btn-outline-primary border-2 m-2 p-2">Hint</button> 
-        <p [hidden]="hidden_hint" id="hint" style="background:grey; padding: 1%; z-index:9999; position:absolute; border-radius: 0.5em; margin: 1%;"></p>
+        <p *ngIf="!hidden_hint" id="hint" style="background:grey; padding: 1%; z-index:9999; position:absolute; border-radius: 0.5em; margin: 1%;"></p>
                 <!-- <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button>  -->
     </div>
 
