@@ -186,6 +186,7 @@ export class QuestionComponent implements OnInit {
   customMenuDone() {
     this.isCustomMenuFinished = true;
     this.getCustomQuestions();
+    this.isStart = true;
   }
 
   async getRandomQuestions() {

@@ -15,6 +15,8 @@ export class CustomQuizComponent {
 
   @Output() buttonClick = new EventEmitter<void>();
 
+  selectedSymptom: string = ''; // Initialize selectedSymptom as an empty string
+
   customMenuDone() {
     this.buttonClick.emit();
   }
