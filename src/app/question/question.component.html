@@ -5,7 +5,7 @@
       <!-- normal screen -->
 
       <!-- >lg -->
-      <ng-container *ngIf="isCustom && !isCustomMenuFinished">
+      <!-- <ng-container *ngIf="isCustom && !isCustomMenuFinished">
         <div class="custom_menu" class="d-none d-lg-block" style="z-index: 1000;">
           <h1 style="text-align: center;">Custom Quiz</h1>
           <div
@@ -14,7 +14,7 @@
           <div style="margin-left: 7%;">
 
             <div class="select_text">
-              Abnomarlity
+              Abnormarlity
               <div class="custom_normal_text arrow select"
                 style="width: 80%; font-size: 2rem; margin-right: auto; margin-left: 1%; margin-top: 0.5%; display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
 
@@ -39,7 +39,7 @@
           <div class="mb-3" style="display: flex; align-items: center;">
             <label for="exampleFormControlInput1" class="form-label"
               style="margin-top:3%;margin-left: 3%; font-size: xx-large;"
-              [(ngModel)]="customAbnomarlityRate">Abnormality Rate(%)</label>
+              [(ngModel)]="customAbnormalityRate">Abnormality Rate(%)</label>
             <input min="0" max="100" class="form-control" id="exampleFormControlInput1"
               placeholder="number range from 0-100" style="margin-top:3%;width: 25%; margin-left: 3%;">
           </div>
@@ -73,10 +73,10 @@
               style="font-size: 2em;margin-left: 3%;">Start</button>
           </div>
         </div>
-      </ng-container>
+      </ng-container> -->
 
       <!-- md -->
-      <ng-container *ngIf="isCustom && !isCustomMenuFinished">
+      <!-- <ng-container *ngIf="isCustom && !isCustomMenuFinished">
         <div class="custom_menu" class="d-none d-md-block d-lg-none">
           <h1 style="text-align: center;">Custom Quiz</h1>
           <div
@@ -85,7 +85,7 @@
           <div style="margin-left: 8%;">
 
             <div class="select_text">
-              Abnomarlity
+              Abnormarlity
               <div class="custom_normal_text arrow select"
                 style="width: 80%; font-size: 2rem; margin-right: auto; margin-left: 1%; margin-top: 0.5%; display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 10px;">
 
@@ -110,7 +110,7 @@
           <div class="mb-3" style="display: flex; align-items: center;">
             <label for="exampleFormControlInput1" class="form-label"
               style="margin-top:3%;margin-left: 3%; font-size: xx-large;"
-              [(ngModel)]="customAbnomarlityRate">Abnormality Rate(%)</label>
+              [(ngModel)]="customAbnormalityRate">Abnormality Rate(%)</label>
             <input min="0" max="100" class="form-control" id="exampleFormControlInput1"
               placeholder="number range from 0-100" style="margin-top:3%;width: 25%; margin-left: 3%;">
           </div>
@@ -144,10 +144,10 @@
               style="font-size: 2em;margin-left: 3%;">Start</button>
           </div>
         </div>
-      </ng-container>
+      </ng-container> -->
 
       <!-- sm -->
-      <ng-container *ngIf="isCustom && !isCustomMenuFinished">
+      <!-- <ng-container *ngIf="isCustom && !isCustomMenuFinished">
         <div class="custom_menu" class="d-block d-md-none">
           <h1 style="text-align: center; font-size: xx-large;">Custom Quiz</h1>
           <div style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin: 1% auto 2%;"></div>
@@ -166,7 +166,7 @@
 
           <div class="mb-3" style="display: flex; align-items: center; margin-left: 3%;">
             <label for="exampleFormControlInput1" class="form-label"
-              style="margin-top: 3%; margin-left: 3%; font-size: large;" [(ngModel)]="customAbnomarlityRate">Abnormality
+              style="margin-top: 3%; margin-left: 3%; font-size: large;" [(ngModel)]="customAbnormalityRate">Abnormality
               Rate(%)</label>
             <input min="0" max="100" class="form-control" id="exampleFormControlInput1" placeholder="0-100"
               style="margin-top: 3%; width: 40%; margin-left: 3%;">
@@ -196,10 +196,12 @@
               style="font-size: 1.3em; margin-left: 3%;">Start</button>
           </div>
         </div>
-      </ng-container>
+      </ng-container> -->
 
 
-
+      <app-custom-quiz [isCustom]="this.isCustom" [isCustomMenuFinished]="this.isCustomMenuFinished"
+        [customAbnormalityRate]="this.customAbnormalityRate" [customQuestionNum]="this.customQuestionNum"
+        [customGender]="this.customGender" [Symptom]="this.Symptom" (buttonClick)="customMenuDone()"></app-custom-quiz>>
 
 
 
