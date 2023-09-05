@@ -14,6 +14,7 @@ import { ComponentNameComponent } from './component-name/component-name.componen
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { RandomQuizComponent } from './random-quiz/random-quiz.component';
 import { QuizPageComponent } from './quiz-page/quiz-page.component';
+import { CustomQuizComponent } from './custom-quiz/custom-quiz.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { QuizPageComponent } from './quiz-page/quiz-page.component';
     ComponentNameComponent,
     SidebarComponent,
     RandomQuizComponent,
-    QuizPageComponent
+    QuizPageComponent,
+    CustomQuizComponent
   ],
   imports: [
     BrowserModule,

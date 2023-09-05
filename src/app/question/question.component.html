@@ -1,10 +1,8 @@
 <div>
   <div>
     <div>
-      <app-sidebar [isMenu]="false" style="display:block; position:fixed; z-index: 100;"></app-sidebar>
-      <!-- normal screen -->
+      <!-- <app-sidebar [isMenu]="false" style="display:block; position:fixed; z-index: 100;"></app-sidebar>
 
-      <!-- md -->
       <ng-container *ngIf="isCustom && !isCustomMenuFinished">
         <div class="custom_menu" class="d-none d-md-block">
           <h1 style="text-align: center;">Custom Quiz</h1>
@@ -75,7 +73,6 @@
         </div>
       </ng-container>
 
-      <!-- sm -->
       <ng-container *ngIf="isCustom && !isCustomMenuFinished">
         <div class="custom_menu" class="d-block d-md-none">
           <h1 style="text-align: center; font-size: xx-large;">Custom Quiz</h1>
@@ -125,7 +122,16 @@
               style="font-size: 1.3em; margin-left: 3%;">Start</button>
           </div>
         </div>
-      </ng-container>
+      </ng-container> -->
+
+      <app-sidebar [isMenu]="false" style="display: block; position: fixed; z-index: 100; top:5%;"></app-sidebar>
+      <!-- normal screen -->
+
+
+
+      <app-custom-quiz *ngIf="!isStart" [isCustom]="this.isCustom" [isCustomMenuFinished]="this.isCustomMenuFinished"
+        [customAbnormalityRate]="this.customAbnormalityRate" [customQuestionNum]="this.customQuestionNum"
+        [customGender]="this.customGender" [Symptom]="this.Symptom" (buttonClick)="customMenuDone()"></app-custom-quiz>
 
       <ng-container *ngIf="(!isCustom && !isStart) || (isCustom && isCustomMenuFinished && !isStart)">
         <app-random-quiz (RQstart)="startQuiz()"></app-random-quiz>

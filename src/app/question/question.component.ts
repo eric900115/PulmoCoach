@@ -42,7 +42,7 @@ export class QuestionComponent implements OnInit {
   isHint: boolean = false;
 
   customSymptom: string;
-  customAbnomarlityRate: number;
+  customAbnormalityRate: number;
   customQuestionNum: number;
   customGender: string;
 
@@ -213,7 +213,7 @@ export class QuestionComponent implements OnInit {
       'symptom': this.customSymptom,
       'gender': this.customGender,
       'questionNum': this.customQuestionNum,
-      'abnormalityRate': this.customAbnomarlityRate
+      'abnormalityRate': this.customAbnormalityRate
     }
 
     const config = {
