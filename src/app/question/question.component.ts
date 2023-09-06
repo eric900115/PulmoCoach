@@ -21,7 +21,7 @@ export class QuestionComponent implements OnInit {
   public currentSubQuestion: number = 0;
   public points: number = 0;
   hidden_hint: boolean = true;
-  Show_CurrentImagePath = [true, true, true, true, true];
+  Show_CurrentImagePath: any = [];
   counter = 60;
   correctAnswer: number = 0;
   incorrectAnswer: number = 0;
@@ -47,9 +47,8 @@ export class QuestionComponent implements OnInit {
   customQuestionNum: number;
   customGender: string;
 
-  firebaseStorage: string = 'https://is202.cs.nthu.edu.tw/'
   imgDbURL: string = 'https://is202.cs.nthu.edu.tw/test/';
-  imgLabelDbURL: string = this.firebaseStorage + 'test_label/';
+  imgLabelDbURL: string = 'https://is202.cs.nthu.edu.tw/test_answer/';
 
   Gender = [
     'Male',
@@ -238,18 +237,13 @@ export class QuestionComponent implements OnInit {
   }
 
   getQuestions(Data: Object) {
-
-      // console.log(Data);
-      for (const [id, data] of Object.entries(Data)) {
-        // console.log(id);
-        // console.log(data);
-        //this.image_data.push(data.image_data);
-        this.ImgURL.push(this.imgDbURL + data.name + ".png")
-        this.questionList.push(data.question);
-        this.AnswerList.push(data.answer);
-      }
-    // console.log(this.ImgURL)
-    
+    for (const [id, data] of Object.entries(Data)) {
+      this.ImgURL.push(this.imgDbURL + data.name + ".png");
+      this.ImgLabelURL.push(this.imgLabelDbURL + data.name + ".png");
+      this.questionList.push(data.question);
+      this.AnswerList.push(data.answer);
+      this.Show_CurrentImagePath.push(true);
+    }    
   }
 
   hintBtn() {
