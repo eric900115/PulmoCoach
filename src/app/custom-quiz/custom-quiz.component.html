@@ -38,18 +38,13 @@
 
 
         <div class="mb-3" style="display: flex; align-items: center;">
-            <label for="exampleFormControlInput1" class="form-label"
-                style="margin-top:3%;margin-left: 3%; font-size: xx-large;" [(ngModel)]="customAbnormalityRate">Abnomaly
-                Rate(%)</label>
-            <input min="0" max="100" class="form-control" id="exampleFormControlInput1"
-                placeholder="number range from 0-100" style="margin-top:3%;width: 25%; margin-left: 3%;">
+            <label for="exampleFormControlInput1" class="form-label" style="margin-top:3%;margin-left: 3%; font-size: xx-large;">AbnomalyRate(%)</label>
+            <input min="0" max="100" class="form-control" id="exampleFormControlInput1" placeholder="number range from 0-100" style="margin-top:3%;width: 25%; margin-left: 3%;" [(ngModel)]="customAbnormalityRate">
             <div style="margin-top:3%;margin-left: 1%; font-size: xx-large;">%</div>
         </div>
         <div class="mb-3" style="display: flex; align-items: center;">
-            <label for="exampleFormControlInput2" class="form-label" style="margin-left: 3%; font-size: xx-large;"
-                [(ngModel)]="customQuestionNum">Number of Questions</label>
-            <input min="1" max="15" type="email" class="form-control" id="exampleFormControlInput2"
-                placeholder="number range from 1-15" style="width: 25%; margin-left: 3%;">
+            <label for="exampleFormControlInput2" class="form-label" style="margin-left: 3%; font-size: xx-large;">Number of Questions</label>
+            <input min="1" max="15" type="email" class="form-control" id="exampleFormControlInput2" [(ngModel)]="customQuestionNum" placeholder="number range from 1-15" style="width: 25%; margin-left: 3%;">
         </div>
 
         <div style="margin-left: 3%;">

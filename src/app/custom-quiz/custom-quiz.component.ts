@@ -6,27 +6,34 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   styleUrls: ['./custom-quiz.component.scss']
 })
 export class CustomQuizComponent implements OnInit {
-  ngOnInit() {}
 
   @Input() isCustom: boolean = true;
   @Input() isCustomMenuFinished: boolean = true;
-  @Input() customAbnormalityRate: number = 0;
-  @Input() customQuestionNum: number = 1;
-  @Input() customGender: string = 'Select';
+  customAbnormalityRate: number = 0;
+  customQuestionNum: number = 1;
+  customGender: string = 'Select';
   @Input() Symptom: any[] = [];
 
-  @Output() buttonClick = new EventEmitter<void>();
+  @Output() buttonClick = new EventEmitter();
 
-  selectedSymptom: string = ''; // Initialize selectedSymptom as an empty string
+  // selectedSymptom: string = ''; // Initialize selectedSymptom as an empty string
+  
+  constructor() {}
+
+  ngOnInit() {}
 
   customMenuDone() {
-    console.log("child emit:")
-    console.log("customAbnormalityRate:", this.customAbnormalityRate)
-    console.log("customQuestionNum:", this.customQuestionNum)
-    console.log("customGender:", this.customGender)
-    console.log("Symptom:", this.Symptom)
+    var selectedSymptoms = this.Symptom.filter(item => item.selected !== false);
 
-    this.buttonClick.emit();
+    // 打印筛选后的结果
+    console.log(selectedSymptoms);
+    console.log("done, selectedSymptom:",selectedSymptoms)
+    this.buttonClick.emit({
+      customAbnormalityRate: this.customAbnormalityRate,
+      customQuestionNum: this.customQuestionNum,
+      customGender: this.customGender,
+      Symptom: this.Symptom
+    });
   }
 
 }

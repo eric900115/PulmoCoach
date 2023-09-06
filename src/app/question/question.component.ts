@@ -183,17 +183,28 @@ export class QuestionComponent implements OnInit {
     }
   }
 
-  customMenuDone() {
+  customMenuDone(data: {
+    customAbnormalityRate: number,
+    customQuestionNum: number, 
+    customGender: string, 
+    Symptom: any[] 
+  }) {
+    
     this.isCustomMenuFinished = true;
-    this.getCustomQuestions();
     this.isStart = true;
-    console.log("Custom done:")
-    console.log("isCustom:", this.isCustom)
+    console.log("Custom done:", data)
+    this.customAbnormalityRate = data.customAbnormalityRate
+    this.customQuestionNum = data.customQuestionNum
+    this.customGender = data.customGender
+    this.Symptom = data.Symptom
+    console.log("isCustom:")
     console.log("isCustomMenuFinished:", this.isCustomMenuFinished)
     console.log("customAbnormalityRate:", this.customAbnormalityRate)
     console.log("customQuestionNum:", this.customQuestionNum)
     console.log("customGender:", this.customGender)
     console.log("Symptom:", this.Symptom)
+
+    this.getCustomQuestions();
   }
 
   async getRandomQuestions() {
@@ -234,7 +245,9 @@ export class QuestionComponent implements OnInit {
 
     const response = await fetch(url, config);
     const data = await response.json();
-
+    console.log("generate data", data)
+    console.log("data from", url)
+    console.log("requestData", requestData)
     return data;
   }
 
