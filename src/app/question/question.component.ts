@@ -185,8 +185,9 @@ export class QuestionComponent implements OnInit {
 
   customMenuDone() {
     this.isCustomMenuFinished = true;
-    this.getCustomQuestions();
-    this.isStart = true;
+    this.getCustomQuestions().then(() => {
+      this.isStart = true;
+    });
     console.log("Custom done:")
     console.log("isCustom:", this.isCustom)
     console.log("isCustomMenuFinished:", this.isCustomMenuFinished)
