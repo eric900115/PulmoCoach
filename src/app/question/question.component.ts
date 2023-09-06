@@ -187,6 +187,13 @@ export class QuestionComponent implements OnInit {
     this.isCustomMenuFinished = true;
     this.getCustomQuestions();
     this.isStart = true;
+    console.log("Custom done:")
+    console.log("isCustom:", this.isCustom)
+    console.log("isCustomMenuFinished:", this.isCustomMenuFinished)
+    console.log("customAbnormalityRate:", this.customAbnormalityRate)
+    console.log("customQuestionNum:", this.customQuestionNum)
+    console.log("customGender:", this.customGender)
+    console.log("Symptom:", this.Symptom)
   }
 
   async getRandomQuestions() {

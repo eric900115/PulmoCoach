@@ -5,7 +5,9 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './custom-quiz.component.html',
   styleUrls: ['./custom-quiz.component.scss']
 })
-export class CustomQuizComponent {
+export class CustomQuizComponent implements OnInit {
+  ngOnInit() {}
+
   @Input() isCustom: boolean = true;
   @Input() isCustomMenuFinished: boolean = true;
   @Input() customAbnormalityRate: number = 0;
@@ -18,6 +20,12 @@ export class CustomQuizComponent {
   selectedSymptom: string = ''; // Initialize selectedSymptom as an empty string
 
   customMenuDone() {
+    console.log("child emit:")
+    console.log("customAbnormalityRate:", this.customAbnormalityRate)
+    console.log("customQuestionNum:", this.customQuestionNum)
+    console.log("customGender:", this.customGender)
+    console.log("Symptom:", this.Symptom)
+
     this.buttonClick.emit();
   }
 
