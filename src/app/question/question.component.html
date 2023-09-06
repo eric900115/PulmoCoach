@@ -22,7 +22,7 @@
           
           <!-- Top 3 btn -->
           <div class="top_btn">
-              <!-- <button 
+              <button 
                   type="button" 
                   (click)="prevQuestion()" 
                   [disabled]="(currentQuestion === 0) && (currentSubQuestion === 0)" 
@@ -42,7 +42,7 @@
                   [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
                   class="btn btn-danger m-2 p-2">
                   End Quiz
-              </button> -->
+              </button>
           </div>
                   
           <div class="Q">{{questionList[currentQuestion][currentSubQuestion][0]}}?
