@@ -37,7 +37,7 @@
               </button>
               <button 
                   type="button" 
-                  (click)="nextQuestion()" 
+                  (click)="endQuiz()" 
                   [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
                   class="btn btn-danger m-2 p-2">
                   End Quiz
