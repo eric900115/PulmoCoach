@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class HistoryComponent {
 
-  dbUrl: String = 'http://127.0.0.1:5000/';
+  dbUrl: String = 'https://is202.cs.nthu.edu.tw/app/';
   uid: string = 'eric20607';
 
   records: any = [];
@@ -19,8 +19,6 @@ export class HistoryComponent {
     const infos = JSON.parse(localStorage.getItem('infos') || '');
     const idNumL = infos['id_numL'];
     this.uid = idNumL;
-    console.log(this.uid)
-
     await this.getHistory();
   }
 
@@ -29,8 +27,6 @@ export class HistoryComponent {
     const data = await response.json();
     const entries = Object.entries(data);
     this.records = entries.map(entry => entry[1]);;
-    console.log(Object.entries(data))
-    console.log(this.records)
   }
 
 }

@@ -1,132 +1,110 @@
 <div>
+  <app-sidebar [isMenu]="false" style="display:block; position:fixed; z-index: 100;"></app-sidebar>
   <div>
     <div>
-      <ng-container *ngIf="isCustom && !isCustomMenuFinished">
-        <div class="custom_menu">
-          <h1 style="text-align: center;">Custom Quiz</h1>
-          <div style="width: 90%; height: 0.1rem; border-top: solid #FFFFFF 1px; margin-inline: auto; margin-top: 3%;"></div>
-          <div style="margin-left: 3%;">
-            <span class="select_text">Abnomarlity
-            <select [(ngModel)]="customSymptom" class="custom_normal_text arrow" style="width: 27%; font-size: 2rem; height:20%; margin-right: auto; margin-left: 1%; margin-top: 4%;">
-              <option *ngFor="let c of Symptom" [ngValue]="c">
-                {{c}}
-              </option>
-            </select>
-          </span>
-          </div>
-          <span style="margin-left: 3%;">
-            <span class="select_text">Abnomarlity Rate</span>
-            <input min="0" max="100" class="custom_normal_text arrow" [(ngModel)]="customAbnomarlityRate" style="width: 10%; font-size: 2em; height:10%; margin-right: 3%; margin-left: 1%; margin-top: 7%; ">
-            <span class="select_text">Number of Questions</span>
-            <input max="15" class="custom_normal_text arrow" [(ngModel)]="customQuestionNum" style="width: 10%; font-size: 2em; height:10%; margin-right: 3%; margin-left: 1%; margin-top: 7%;">
-          </span>
-          <div style="margin-left: 3%;">
-            <span class="select_text">Gender</span>
-            <select [(ngModel)]="customGender" class="custom_normal_text arrow" style="width: 10%; font-size: 2em; height:10%; margin-right: auto; margin-left: 1%; margin-top: 7%;">
-              <option *ngFor="let c of Gender" [ngValue]="c">
-                {{c}}
-              </option>
-            </select>
-          </div>
-          <div style="display: flex; justify-content:space-around; margin-top: 5%; padding: 3%;">
-            <button id = "custom_home_btn" routerLink="/menu" class="custom_normal_text arrow" style="font-size: 2em;">Home</button>
-            <button id = "custom_clear_btn" class="custom_normal_text arrow" style="font-size: 2em;">Clear</button>
-            <button id = "custom_start_btn" (click)="customMenuDone()" class="custom_normal_text arrow" style="font-size: 2em;">Start</button>
-          </div>
-        </div>
-      </ng-container>
+    <!-- <app-sidebar [isMenu]="false" style="display:block; position:fixed; z-index: 100;"></app-sidebar> -->
 
+      <!-- custom quiz page -->
+      <app-custom-quiz *ngIf="!isStart" [isCustom]="this.isCustom" [isCustomMenuFinished]="this.isCustomMenuFinished" [Symptom]="this.Symptom"
+        (buttonClick)="customMenuDone($event)"></app-custom-quiz>
+
+      <!-- random quiz page -->
       <ng-container *ngIf="(!isCustom && !isStart) || (isCustom && isCustomMenuFinished && !isStart)">
-        <div class="ready-grid-container">
-          <div class="ready-grid-left">
-            <div><img id="user_img" src="assets/pulmo_coach_logo.jpg" alt="user_img"></div>
-            <div><p id="user_name">PulmoCoach</p></div>
-          </div>
-          <div class="ready-grid_midline"></div>
-          <div class="quiz">
-            <p id="quiz_h2" class="h1 display-1"><var>{{this.mode}}</var></p> <!-- Note: QUIZTYPE 要換成 Random 或 Custom -->
-            <hr id="quiz_hr">
-          </div>
-      
-          <div class="quiz_warning">
-            <p class="origin_paragraph h5">Since there are not enough CXRs that meet the requirement of the custom selection, the remaining questions will be replaced with normal CXRs.</p> <!-- Note: warning 在特殊條件下才顯示（題數不夠） -->
-          </div>
-          <div class="quiz_btn">
-            <button id="abort" routerLink="/menu">Abort Quiz</button>
-            <button id="go_to_quiz" (click)="startQuiz()">Go To Quiz</button>
-          </div>	
-        </div>
+        <app-random-quiz (RQstart)="startQuiz()"></app-random-quiz>
       </ng-container>
 
+      <!-- quiz page -->
       <ng-container *ngIf="!isQuizCompleted && isStart">
         <div class="grid-container" style="position: relative;">
           <div class="grid-left">
-						<img id="photo" src={{this.ImgURL[currentQuestion]}} alt="user_img">
-					</div>
-					
-          <!-- <div class="grid_midline"></div> -->
-					
-          <div class="top_btn">
-						<button id="back" (click)="prevQuestion()" [disabled]="(currentQuestion === 0) 
-            && (currentSubQuestion === 0)">Back</button>
-						<button id="next" (click)="nextQuestion()" [disabled]="(currentQuestion === questionList.length -1) 
-            && (currentSubQuestion === questionList[questionList.length - 1].length - 1)">Next</button>
-						<button id="end_quiz" (click)="endQuiz()">End Quiz</button>
-					</div>
-					
-          <div class="Q">{{questionList[currentQuestion][currentSubQuestion][0]}}?
-            <!-- QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion -->
+              <img id="photo" src={{this.ImgURL[currentQuestion]}} alt="user_img">
           </div>
-					<div class="hint"> 
-            <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button> 
-						<p [hidden]="hidden_hint" id="hint" style="background:grey; padding: 1%; z-index:9999; position:absolute; border-radius: 0.5em; margin: 1%;"></p>
-						<!-- <button id="hint_btn" (click) = "show_hint()" style="padding: 3%;">Hint</button>  -->
-					</div>
-					<div class="answer">
-						<button id="present" (click)="answer('YES');">Present</button>
-						<button id="absent" (click)="answer('NO');" >Absent</button>
-					</div>
-					<div class="process">
-						<p id="ratio">
-              <var id="finished">{{currentQuestion + 1}}</var> 
-              / 
-              <var id="total">{{questionList.length}}</var>
-            </p> 
-					</div>	
-				</div>
+          
+          <!-- Top 3 btn -->
+          <div class="top_btn">
+              <button 
+                  type="button" 
+                  (click)="prevQuestion()" 
+                  [disabled]="(currentQuestion === 0) && (currentSubQuestion === 0)" 
+                  class="btn btn-secondary m-2 p-2">
+                  Back
+              </button>
+              <button 
+                  type="button" 
+                  (click)="nextQuestion()" 
+                  [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
+                  class="btn btn-success m-2 p-2">
+                  Next
+              </button>
+              <button 
+                  type="button" 
+                  (click)="endQuiz()" 
+                  [disabled]="(currentQuestion === questionList.length -1) && (currentSubQuestion === questionList[questionList.length - 1].length - 1)"
+                  class="btn btn-danger m-2 p-2">
+                  End Quiz
+              </button>
+          </div>
+                  
+          <div class="Q fs-3">{{questionList[currentQuestion][currentSubQuestion][0]}}?
+          <!-- QuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestionQuestion -->
+          </div>
+      
+          <div class="hint_div"> 
+              <button (click) = "show_hint()" class="btn btn-outline-primary border-2 m-2 p-2">Hint</button> 
+              <p *ngIf="!hidden_hint" id="hint" style="background:grey; padding: 1%; z-index:9999; position:absolute; border-radius: 0.5em; margin: 1%;">{{hint_val}}</p>
+          </div>
+      
+          <div class="answer d-flex flex-row justify-content-around">
+              <button class="btn btn-outline-light border-2 px-4 btn-lg" id="present" (click)="answer('YES');">Present</button>
+              <button class="btn btn-outline-light border-2 px-4 btn-lg" id="absent" (click)="answer('NO');" >Absent</button>
+          </div>
+          
+          <div class="process">
+              <p id="ratio">
+                  <var id="finished">{{currentQuestion + 1}}</var> 
+                   / 
+                  <var id="total">{{questionList.length}}</var>
+              </p> 
+          </div>	
+        </div>
+
       </ng-container>
-    
-  
+
+      <!-- quiz completed page -->
       <ng-container *ngIf="isQuizCompleted">
         <div class="container-fluid" style="background-color:black; padding:3%; border-color:white;border-width:0.1em;">
-          <div style="border-color:white;border-width:0.1rem; border-style:solid; display:flex; flex-direction:column; padding:2%; justify-content:space-between;">
+          <div
+            style="border-color:white;border-width:0.1rem; border-style:solid; display:flex; flex-direction:column; padding:2%; justify-content:space-between;">
             <div style="display: flex; justify-content:space-between;">
               <div style="display:flex; flex-direction: column; align-items: center;">
-                <img src="../../assets/history/circle.svg" style="width: 90%; padding: 5%;"/>
-                  <p class="normal_text" style="font-size: 2.5em; padding-top: 8%;">User Name</p>
+                <img src="../../assets/history/circle.svg" style="width: 90%; padding: 5%;" />
+                <p class="normal_text" style="font-size: 2.5em; padding-top: 8%;">User Name</p>
               </div>
             </div>
-            <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">History</p>
+            <p class="normal_text" style="font-size: 4em; margin-inline: auto; padding-top: 10%; padding-bottom: 1%;">
+              History</p>
             <div class="link-top"></div>
             <div style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
               <p class="normal_text" style="font-size: 2em;">Question</p>
               <p class="normal_text" style="font-size: 2em;">Answer</p>
               <p class="normal_text" style="font-size: 2em;">Your Answer</p>
             </div>
-  
+
             <div *ngFor="let answer of AnswerList; let i = index">
-              <div *ngFor="let item of answer | keyvalue" style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
+              <div *ngFor="let item of answer | keyvalue"
+                style="display: grid; grid-template-columns: 1fr 1fr 1fr;  justify-items: center; padding-block: 2%;">
                 <p class="normal_text" style="font-size: 1.75em;">{{item.key}}</p>
                 <p class="normal_text" style="font-size: 1.75em;">{{item.value[0]}}</p>
                 <p class="normal_text" style="font-size: 1.75em;">{{item.value[1]}}</p>
-                <button *ngIf="isCustom" class="custom_normal_text arrow" style="border-radius:100%; padding: 5%; margin: auto; " (click)="showImg(i)">Answer key</button>
-                <img *ngIf="isCustom" [hidden]="Show_CurrentImagePath[i]" [src]="ImgLabelURL[i]" style="width: 100%;"/>
+                <button *ngIf="isCustom" class="custom_normal_text arrow"
+                  style="border-radius:100%; padding: 5%; margin: auto; " (click)="showImg(i)">Answer key</button>
+                <img *ngIf="isCustom" [hidden]="Show_CurrentImagePath[i]" [src]="ImgLabelURL[i]" style="width: 100%;" />
               </div>
             </div>
-            <button id = "result_home_btn"routerLink="/menu" class="normal_text" style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
+            <button id="result_home_btn" routerLink="/menu" class="normal_text"
+              style="font-size: 2em; height:1.5em; background-color:transparent; border-color: white; border-width: 0.01em; align-self: center; margin-right: auto; margin-left: 3%; margin-top: 10%; padding:3%;">Home</button>
           </div>
         </div>
       </ng-container>
+    </div>
   </div>
-</div>
-  

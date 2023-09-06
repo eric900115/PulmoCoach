@@ -1,19 +1,19 @@
-<div class="_container" [ngClass]="{'border': sideBarIsOpen}" [ngClass]="{'background': sideBarIsOpen}"
-    [ngStyle]="sideBarIsOpen ? {'background-color': 'rgb(55, 57, 101)'} : {}">
-    <div style="font-size: 2.3rem; width: 100%;" (click)="sideBarToggle()">
-        <i class="fa-solid fa-bars"></i>
-    </div>
+<div style="width: 10%; position: fixed; top: 0;" class="p-3" (click)="sideBarToggle()">
+    <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+</div>
+<div *ngIf="sideBarIsOpen" class="bar_container position: fixed;" [ngClass]="{'border': sideBarIsOpen}" [ngClass]="{'background': sideBarIsOpen}"
+    [ngStyle]="sideBarIsOpen ? {'background-color': 'rgb(0, 0, 0)', 'border-right': '2px solid rgb(165, 164, 164)', 'overflow-y': 'auto', 'padding-top': '3%' } : {}">
 
-    <div *ngIf="sideBarIsOpen" style="max-width: 100%; margin-top: 1%; tesidext-align: center;">
-        <div style="position: absolute;">
-            <a href="/" class="d-flex align-items-center mb-0 me-md-auto text-white text-decoration-none"></a>
+    <!-- icon -->
+    <!-- <div style="width: 10%; position: sticky;" class="p-3" (click)="sideBarToggle()">
+        <i class="fa-solid fa-bars" style="color: #ffffff;"></i>
+    </div> -->
+
+    <!-- Sidebar -->
+    <div *ngIf="sideBarIsOpen" style="text-align: center;" class="d-flex flex-column justify-content-between">
+        <div style="display: flex; justify-content: center; width: 100%">
+            <a href="#" routerLink="/menu"><img src=" assets/pulmo_coach_logo.jpg" alt=""></a>
         </div>
-        <div style="display: flex; justify-content: center; max-width: 100%;">
-            <img src=" assets/pulmo_coach_logo.jpg" alt="">
-        </div>
-        <!-- <div style="display: flex; justify-content: center; align-items: center; max-width: 100%;">
-            <img src="assets/pulmo_coach_logo.jpg" alt="" style="max-width: 100%; max-height: 100%;">
-        </div> -->
 
         <a href="#" routerLink="/menu"
             class="nav-link d-flex align-items-center mx-auto text-white text-decoration-none">
@@ -56,18 +56,19 @@
 
         <hr>
 
-        <div class="dropdown">
-            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle"
+        <!-- Dropdown -->
+        <div class="dropdown d-flex flex-column justify-content-between">
+            <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle m-auto"
                 data-bs-toggle="dropdown" aria-expanded="false">
-                <div style="font-size: large;">GDSC PulmoCoach Group</div>
+                <p style="font-size: large; text-align: center;">GDSC PulmoCoach Group</p>
             </a>
             <ul class="dropdown-menu dropdown-menu-dark text-small shadow">
 
-                <li><a class="dropdown-item" href="#">Profile</a></li>
+                <li><a class="dropdown-item text-align: center;" href="#">Profile</a></li>
                 <li>
                     <hr class="dropdown-divider">
                 </li>
-                <li><a class="dropdown-item" href="#">Sign out</a></li>
+                <li><a class="dropdown-item text-align: center;" href="#">Sign out</a></li>
             </ul>
         </div>
     </div>
