@@ -123,7 +123,7 @@ export class QuizPageComponent {
     const idNumL = infos['id_numL'];
     this.uid = idNumL;
 
-    console.log(this.uid);
+    // console.log(this.uid);
 
     if (this.mode == 'Random Quiz') {
       this.getRandomQuestions();
@@ -152,7 +152,7 @@ export class QuizPageComponent {
   async getRandomData() {//////
     const response = await fetch(this.dbUrl + '/item/' + this.questionNum.toString());
     const data = await response.json();
-    console.log(data);
+    // console.log(data);
     return data;
   }
 
@@ -381,7 +381,7 @@ export class QuizPageComponent {
 
   showImg(option: number) {
     this.Show_CurrentImagePath[option] = !this.Show_CurrentImagePath[option]
-    console.log("result: ", this.Show_CurrentImagePath[0], this.Show_CurrentImagePath[1], this.Show_CurrentImagePath[2])
+    // console.log("result: ", this.Show_CurrentImagePath[0], this.Show_CurrentImagePath[1], this.Show_CurrentImagePath[2])
   }
 
 }

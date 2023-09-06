@@ -167,12 +167,9 @@ export class QuestionComponent implements OnInit {
     this.name = localStorage.getItem('name')!;
     this.mode = localStorage.getItem("mode") || "";
     this.questionNum = 1;
-    console.log(this.name);
     const infos = JSON.parse(localStorage.getItem('infos') || '');
     const idNumL = infos['id_numL'];
     this.uid = idNumL;
-    console.log(infos);
-    console.log(this.uid);
 
     if (this.mode == 'Random Quiz') {
       this.getRandomQuestions();
@@ -212,7 +209,6 @@ export class QuestionComponent implements OnInit {
   async getRandomData(){//////
     const response = await fetch(this.dbUrl + 'item/'  + this.questionNum.toString());
     const data = await response.json();
-    console.log(data);
     return data;
   }
 
@@ -237,24 +233,21 @@ export class QuestionComponent implements OnInit {
 
     const response = await fetch(url, config);
     const data = await response.json();
-    // console.log("generate data", data)
-    // console.log("data from", url)
-    // console.log("requestData", requestData)
     return data;
   }
 
   getQuestions(Data: Object) {
 
-      console.log(Data);
+      // console.log(Data);
       for (const [id, data] of Object.entries(Data)) {
-        console.log(id);
-        console.log(data);
+        // console.log(id);
+        // console.log(data);
         //this.image_data.push(data.image_data);
         this.ImgURL.push(this.imgDbURL + data.name + ".png")
         this.questionList.push(data.question);
         this.AnswerList.push(data.answer);
       }
-    console.log(this.ImgURL)
+    // console.log(this.ImgURL)
     
   }
 
@@ -407,7 +400,7 @@ export class QuestionComponent implements OnInit {
 
   showImg(option: number) {
     this.Show_CurrentImagePath[option] = !this.Show_CurrentImagePath[option]
-    console.log("result: ", this.Show_CurrentImagePath[0], this.Show_CurrentImagePath[1], this.Show_CurrentImagePath[2])
+    // console.log("result: ", this.Show_CurrentImagePath[0], this.Show_CurrentImagePath[1], this.Show_CurrentImagePath[2])
   }
 
 }
