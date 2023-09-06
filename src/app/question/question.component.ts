@@ -308,12 +308,12 @@ export class QuestionComponent implements OnInit {
     // this.AnswerList[this.currentQuestion][symptom][0] is the correct answer of problem
     // this.AnswerList[this.currentQuestion][symptom][1] is the answer entered by user
     const symptom: string = this.questionList[this.currentQuestion][this.currentSubQuestion][0];
-    if (this.isCustom) {
-      this.AnswerList[this.currentQuestion][(this.currentQuestion + 1).toString()][1] = option;
-    }
-    else {
+    //if (this.isCustom) {
+    //  this.AnswerList[this.currentQuestion][(this.currentQuestion + 1).toString()][1] = option;
+    //}
+    //else {
       this.AnswerList[this.currentQuestion][symptom][1] = option;
-    }
+    //}
   }
 
   calculateResult() {
