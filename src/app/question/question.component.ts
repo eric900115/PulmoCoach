@@ -192,18 +192,10 @@ export class QuestionComponent implements OnInit {
     
     this.isCustomMenuFinished = true;
     this.isStart = true;
-    console.log("Custom done:", data)
     this.customAbnormalityRate = data.customAbnormalityRate
     this.customQuestionNum = data.customQuestionNum
     this.customGender = data.customGender
-    this.Symptom = data.Symptom
-    console.log("isCustom:")
-    console.log("isCustomMenuFinished:", this.isCustomMenuFinished)
-    console.log("customAbnormalityRate:", this.customAbnormalityRate)
-    console.log("customQuestionNum:", this.customQuestionNum)
-    console.log("customGender:", this.customGender)
-    console.log("Symptom:", this.Symptom)
-
+    this.customSymptom = data.Symptom.toString()
     this.getCustomQuestions();
   }
 
@@ -245,9 +237,9 @@ export class QuestionComponent implements OnInit {
 
     const response = await fetch(url, config);
     const data = await response.json();
-    console.log("generate data", data)
-    console.log("data from", url)
-    console.log("requestData", requestData)
+    // console.log("generate data", data)
+    // console.log("data from", url)
+    // console.log("requestData", requestData)
     return data;
   }
 
@@ -262,10 +254,7 @@ export class QuestionComponent implements OnInit {
         this.questionList.push(data.question);
         this.AnswerList.push(data.answer);
       }
-    //console.log(this.questionList)
-    //console.log(this.AnswerList)
     console.log(this.ImgURL)
-    //console.log(this.ImgLabelURL)
     
   }
 
@@ -392,10 +381,10 @@ export class QuestionComponent implements OnInit {
       this.hint_showed = this.hint_showed + 1;
       if (this.hint_showed % 2 === 1) {
         var ele = document.getElementById("hint") as HTMLElement;
-        console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
+        // console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
         const p = (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0])) as string;
-        console.log("this is p");
-        console.log(typeof (p));
+        // console.log("this is p");
+        // console.log(typeof (p));
         ele.textContent = p;
       }
       else {

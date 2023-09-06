@@ -24,15 +24,12 @@ export class CustomQuizComponent implements OnInit {
 
   customMenuDone() {
     var selectedSymptoms = this.Symptom.filter(item => item.selected !== false);
-
-    // 打印筛选后的结果
-    console.log(selectedSymptoms);
-    console.log("done, selectedSymptom:",selectedSymptoms)
+    var selectedValues = selectedSymptoms.map(item => item.value);
     this.buttonClick.emit({
       customAbnormalityRate: this.customAbnormalityRate,
       customQuestionNum: this.customQuestionNum,
       customGender: this.customGender,
-      Symptom: this.Symptom
+      Symptom: selectedValues
     });
   }
 

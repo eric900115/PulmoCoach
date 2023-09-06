@@ -355,10 +355,10 @@ export class QuizPageComponent {
       this.hint_showed = this.hint_showed + 1;
       if (this.hint_showed % 2 === 1) {
         var ele = document.getElementById("hint") as HTMLElement;;
-        console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
+        // console.log(this.questionList[this.currentQuestion][this.currentSubQuestion][0]);
         const p = (this.Qusetion_Map.get(this.questionList[this.currentQuestion][this.currentSubQuestion][0])) as string;
-        console.log("this is p");
-        console.log(typeof (p));
+        // console.log("this is p");
+        // console.log(typeof (p));
         ele.textContent = p;
       }
       else {
