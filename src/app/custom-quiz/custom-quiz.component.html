@@ -69,14 +69,14 @@
         <label for="Anomaly_Rate" class="label">Anomaly Rate: </label>
         <input [(ngModel)]="customAbnormalityRate" id="Anomaly_Rate" class="form-control" type="text"
             formControlName="Anomaly_Rate" placeholder="0-100"
-            oninput=" this.value=this.value> 100 ? 100: Math.round(this.value) < 0 ? 0 : Math.round(this.value)">
+            oninput=" this.value=this.value> 100 ? 100: Math.round(this.value) < 0 ? '' : Math.round(this.value)">
         <label id="Anomaly_Rate_end" class="label">% (enter integer range from 0-100) </label>
     </div>
     <div class="form">
         <label for="Num_of_Q" class="label">Number of Questions: </label>
         <input [(ngModel)]="customQuestionNum" id="Num_of_Q" class="form-control" type="text" formControlName="Num_of_Q"
             placeholder="1-15"
-            oninput="this.value = this.value > 15 ? 15: Math.round(this.value) < 1 ? 1 : Math.round(this.value)">
+            oninput="this.value = this.value > 15 ? 15: Math.round(this.value) < 1 ? '' : Math.round(this.value)">
         <label id="Num_of_Q_end" class="label">(enter integer range from 1-15) </label>
     </div>
 
