@@ -6,8 +6,8 @@ import { FormGroup, FormControl } from '@angular/forms';
   styleUrls: ['./custom-quiz.component.scss']
 })
 export class CustomQuizComponent implements OnInit {
-  customAbnormalityRate: number = 0;
-  customQuestionNum: number = 1;
+  customAbnormalityRate: number;
+  customQuestionNum: number;
   customGender: string = 'Select';
   @Input() isCustom: boolean = true;
   @Input() isCustomMenuFinished: boolean = true;
