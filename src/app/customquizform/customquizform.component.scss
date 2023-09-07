@@ -1,0 +1,84 @@
+#CQform {
+    display: block;
+    margin-left: 5%;
+}
+
+.label {
+    margin-right: 2%;
+}
+
+.form {
+    margin-bottom: 3%;
+    font-size: medium;
+    display: flex;
+
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .form {
+        font-size: x-large;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .form {
+        font-size: xx-large;
+    }
+}
+
+#Anomaly_Rate {
+    width: 40%;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #Anomaly_Rate {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #Anomaly_Rate {
+        width: 25%;
+    }
+}
+
+#Num_of_Q {
+    width: 40%;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #Num_of_Q {
+        width: 25%;
+    }
+}
+
+@media (min-width: 992px) {
+    #Num_of_Q {
+        width: 25%;
+    }
+}
+
+#Gender {
+    width: 18%;
+    font-size: 1em;
+    height: 1.5em;
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+    padding: 0.25em;
+    color: #333;
+    text-align-last: center;
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+    #Gender {
+        width: 15%;
+    }
+}
+
+@media (min-width: 992px) {
+    #Gender {
+        width: 15%;
+    }
+}

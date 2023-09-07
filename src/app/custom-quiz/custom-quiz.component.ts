@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 @Component({
   selector: 'app-custom-quiz',
   templateUrl: './custom-quiz.component.html',
@@ -12,13 +13,18 @@ export class CustomQuizComponent implements OnInit {
   @Input() isCustomMenuFinished: boolean = true;
   @Input() Symptom: any[] = [];
 
+
   @Output() buttonClick = new EventEmitter();
 
   // selectedSymptom: string = ''; // Initialize selectedSymptom as an empty string
-  
-  constructor() {}
+  CQform = new FormGroup({
+    Anomaly_Rate: new FormControl(''),
+    Num_of_Q: new FormControl(''),
+    Gender: new FormControl(''),
+  });
+  constructor() { }
 
-  ngOnInit() {}
+  ngOnInit() { }
 
   customMenuDone() {
     var selectedSymptoms = this.Symptom.filter(item => item.selected !== false);

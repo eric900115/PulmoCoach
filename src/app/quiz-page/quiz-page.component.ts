@@ -32,7 +32,7 @@ export class QuizPageComponent {
   isCustomMenuFinished: boolean = false;
 
   mode: String = '';
-  dbUrl: String = 'http://127.0.0.1:5000/';
+  dbUrl: String = 'http://127.0.0.1:5001/';
   questionNum: number = 0;
 
   uid: string = 'eric20607';

@@ -1,0 +1,23 @@
+<form [formGroup]="CQform" id="CQform">
+    <div class="form">
+        <label for="Anomaly_Rate" class="label">Anomaly Rate: </label>
+        <input id="Anomaly_Rate" class="form-control" type="text" formControlName="Anomaly_Rate" placeholder="0-100"
+            oninput=" this.value=this.value> 100 ? 100: Math.round(this.value) < 0 ? 0 : Math.round(this.value)">
+    </div>
+    <div class="form">
+        <label for="Num_of_Q" class="label">Number of Questions: </label>
+        <input id="Num_of_Q" class="form-control" type="text" formControlName="Num_of_Q" placeholder="1-15"
+            oninput="this.value = this.value > 15 ? 15: Math.round(this.value) < 1 ? 1 : Math.round(this.value)">
+    </div>
+
+    <div class="form">
+        <label for="Gender" class="label">Gender: </label>
+        <select required id="Gender" type="text" formControlName="Gender">
+            <option value="" disabled style="color:black;">Select</option>
+            <option value="male">Male</option>
+            <option value="female">Female</option>
+            <option value="other">Both</option>
+        </select>
+    </div>
+
+</form>
