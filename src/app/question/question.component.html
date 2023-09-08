@@ -5,11 +5,11 @@
     <!-- <app-sidebar [isMenu]="false" style="display:block; position:fixed; z-index: 100;"></app-sidebar> -->
 
       <!-- custom quiz page -->
-      <app-custom-quiz *ngIf="!isStart" [isCustom]="this.isCustom" [isCustomMenuFinished]="this.isCustomMenuFinished" [Symptom]="this.Symptom"
+      <app-custom-quiz *ngIf="isCustom && !isStart" [isCustom]="this.isCustom" [isCustomMenuFinished]="this.isCustomMenuFinished" [Symptom]="this.Symptom"
         (buttonClick)="customMenuDone($event)"></app-custom-quiz>
 
       <!-- random quiz page -->
-      <ng-container *ngIf="(!isCustom && !isStart) || (isCustom && isCustomMenuFinished && !isStart)">
+      <ng-container *ngIf="(!isCustom && !isStart)">
         <app-random-quiz (RQstart)="startQuiz()"></app-random-quiz>
       </ng-container>
 
