@@ -1,3 +1,16 @@
+<head>
+    <style>
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
+</head>
 <!-- >lg -->
 <ng-container *ngIf="isCustom && !isCustomMenuFinished">
     <div class="custom_menu" class="d-none d-lg-block" style="z-index: 1000;">
@@ -67,15 +80,15 @@
 <form [formGroup]="CQform" id="CQform">
     <div class="form">
         <label for="Anomaly_Rate" class="label">Anomaly Rate: </label>
-        <input [(ngModel)]="customAbnormalityRate" id="Anomaly_Rate" class="form-control" type="text"
+        <input [(ngModel)]="customAbnormalityRate" id="Anomaly_Rate" class="form-control" type="number"
             formControlName="Anomaly_Rate" placeholder="0-100"
-            oninput=" this.value=this.value> 100 ? 100: Math.round(this.value) < 0 ? '' : Math.round(this.value)">
+            oninput="value = (this.value > 100 ? 100: Math.round(this.value) < 0 ? '' : Math.round(this.value))">
         <label id="Anomaly_Rate_end" class="label">% (enter integer range from 0-100) </label>
     </div>
     <div class="form">
         <label for="Num_of_Q" class="label">Number of Questions: </label>
-        <input [(ngModel)]="customQuestionNum" id="Num_of_Q" class="form-control" type="text" formControlName="Num_of_Q"
-            placeholder="1-15"
+        <input [(ngModel)]="customQuestionNum" id="Num_of_Q" class="form-control" type="number"
+            formControlName="Num_of_Q" placeholder="1-15"
             oninput="this.value = this.value > 15 ? 15: Math.round(this.value) < 1 ? '' : Math.round(this.value)">
         <label id="Num_of_Q_end" class="label">(enter integer range from 1-15) </label>
     </div>
@@ -91,7 +104,16 @@
 
 </form>
 
-<div style="display: flex; justify-content: flex-end; margin-top: 0.5%; padding: 3%;">
+<!-- <div style="display: flex; justify-content: flex-end; margin-top: 0.5%; padding: 3%;">
     <button id="custom_clear_btn" class="custom_normal_text arrow">Clear</button>
     <button id="custom_start_btn" (click)="customMenuDone()" class="custom_normal_text arrow">Start</button>
+</div> -->
+
+<div class="bottom_btns">
+    <button type="button" (click)="customMenuClear()" class="btn bottom_btn btn-secondary">
+        Clear
+    </button>
+    <button type="button" (click)="customMenuDone()" class="btn bottom_btn btn-success ">
+        Start
+    </button>
 </div>
